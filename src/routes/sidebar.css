@@ -1,0 +1,24 @@
+.body-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  column-gap: 20px;
+}
+
+.nav-color {
+  color: rgb(151, 151, 151);
+  text-decoration: none;
+  justify-content: center;
+}
+
+.nav-color:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.nav-color:active {
+  color: white;
+}
+
+.active {
+  color: white;
+}
