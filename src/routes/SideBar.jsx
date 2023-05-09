@@ -5,6 +5,7 @@ import { Nav, NavItem, NavbarBrand } from "reactstrap";
 import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
+import NavBar from "./NavBar";
 
 export default function Root() {
   return (
@@ -56,7 +57,10 @@ export default function Root() {
 
         {/* Here all the components will load where navbar remains fixed */}
         <div className="components">
-          <Outlet />
+          <NavBar />
+          <div className="sub-components">
+            <Outlet />
+          </div>
         </div>
       </div>
     </>
