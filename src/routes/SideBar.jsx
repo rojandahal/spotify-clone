@@ -13,6 +13,7 @@ export default function Root() {
         <div className="navbar-container">
           <Nav
             vertical
+            className="sticky-top"
             style={{
               backgroundColor: "black",
               height: "100vh",
