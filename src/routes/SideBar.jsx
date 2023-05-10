@@ -13,7 +13,7 @@ export default function Root() {
         <div className="navbar-container">
           <Nav
             vertical
-            className="bg-black"
+            className="sticky-top"
             style={{
               height: "100vh",
               alignItems: "center",
