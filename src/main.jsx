@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NavBarRoutes from "./routes/SideBar.jsx";
+import NavBarRoutes from "./components/SideBar/SideBar";
 import ErrorPage from "./error-page.jsx";
 import Thumbnail from "./components/Cards/SongCard";
 import Homepage from "./pages/HomePage/Homepage";

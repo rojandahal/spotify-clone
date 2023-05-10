@@ -1,6 +1,6 @@
 import { Outlet, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import Logo from "../assets/spotify.png";
+import Logo from "../../assets/spotify.png";
 import { Nav, NavItem, NavbarBrand } from "reactstrap";
 import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
