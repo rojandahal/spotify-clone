@@ -11,8 +11,31 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./signup.css";
+import { auth } from "../../../Firebase/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 
 export default function Signup() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  //   const [username, setUsername] = useState("");
+  //   const [gender, setGender] = useState("");
+
+  const formSubmitClickHandler = async (e) => {
+    e.preventDefault();
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
   return (
     <div className="page">
       <Container
@@ -52,15 +75,15 @@ export default function Signup() {
 
         <h3 className="my-2 text-center">Signup with your Email Address</h3>
         <Row className="my-1 py-5 w-75">
-          <Form>
+          <Form onSubmit={formSubmitClickHandler}>
             {/* Email Starts */}
             <FormGroup>
               <Label for="email">What&apos;s your email address?</Label>
               <Input
-                id="exampleEmail"
-                name="email"
                 placeholder="Enter your Email."
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-black text-white"
               />
             </FormGroup>
@@ -70,10 +93,10 @@ export default function Signup() {
             <FormGroup>
               <Label for="password">Create Password</Label>
               <Input
-                id="examplePassword"
-                name="password"
                 placeholder="Enter a Password."
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="bg-black text-white"
               />
             </FormGroup>
@@ -83,8 +106,6 @@ export default function Signup() {
             <FormGroup>
               <Label for="username">What should we call you?</Label>
               <Input
-                id="username"
-                name="username"
                 placeholder="Enter a profile name."
                 type="text"
                 className="bg-black text-white"
@@ -94,22 +115,25 @@ export default function Signup() {
 
             {/* Gender Values */}
             <Col sm={10}>
-              <Label for="email">What&apos;s your gender?</Label>
+              <Label for="gender">What&apos;s your gender?</Label>
               <FormGroup check>
-                <Input name="radio2" type="radio" /> <Label check>Male</Label>
+                <Input name="radio" type="radio" /> <Label check>Male</Label>
               </FormGroup>
               <FormGroup check>
-                <Input name="radio2" type="radio" /> <Label check>Female</Label>
+                <Input name="radio" type="radio" /> <Label check>Female</Label>
               </FormGroup>
               <FormGroup check>
-                <Input name="radio2" type="radio" /> <Label check>Others</Label>
+                <Input name="radio" type="radio" /> <Label check>Others</Label>
               </FormGroup>
             </Col>
             {/* Gender Ends */}
 
             {/* Signup Buttn */}
             <FormGroup className="d-flex justify-content-center">
-              <Button color="success login-button-green rounded-5 w-75 my-3 text-black">
+              <Button
+                type="submit"
+                color="success login-button-green rounded-5 w-75 my-3 text-black"
+              >
                 Signup
               </Button>
             </FormGroup>
@@ -125,15 +149,14 @@ export default function Signup() {
                 Policy.
               </Label>
             </FormGroup>
-
-            {/* Already have an account ? */}
-            <Label className="d-flex justify-content-center my-3 text-center">
-              Already Have an account?{" "}
-              <a href="/login" className="text-success ms-2">
-                Login
-              </a>
-            </Label>
           </Form>
+          {/* Already have an account ? */}
+          <Label className="d-flex justify-content-center my-3 text-center">
+            Already Have an account?{" "}
+            <a href="/login" className="text-success ms-2">
+              Login
+            </a>
+          </Label>
         </Row>
       </Container>
     </div>
