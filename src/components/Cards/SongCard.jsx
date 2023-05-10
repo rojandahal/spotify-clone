@@ -19,7 +19,7 @@ function SongCard({ songTitle, description }) {
           src="https://picsum.photos/300/200"
         />
         <div className="play-icon position-absolute">
-          <BsPlayCircleFill />
+          <BsPlayCircleFill fill="#1ED760" />
         </div>
         <CardBody>
           <CardTitle className="card-title" tag="h5">

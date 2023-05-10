@@ -7,6 +7,7 @@ import ErrorPage from "./error-page.jsx";
 import Thumbnail from "./components/Cards/SongCard";
 import Homepage from "./pages/HomePage/Homepage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Signup from "./pages/Authentication/Signup/Signup";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
         element: <Thumbnail />,
       },
     ],
+  },
+
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 
