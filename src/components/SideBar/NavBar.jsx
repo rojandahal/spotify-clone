@@ -1,6 +1,5 @@
 import { Button, Nav, NavItem, Navbar, NavbarText } from "reactstrap";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
 import "./navbar.css";
 
 export default function NavBar() {
@@ -14,14 +13,14 @@ export default function NavBar() {
           <AiOutlineRight className="navigation-arrow" />
         </NavItem>
       </Nav>
-      <NavLink to="/signup" className="navlink">
+      <a href="/signup" className="navlink">
         <NavbarText className="text-white me-5">Signup</NavbarText>
-      </NavLink>
-      <NavLink to="/login">
+      </a>
+      <a href="/login">
         <Button className="login-button navlink text-black bg-white me-5">
           Login
         </Button>
-      </NavLink>
+      </a>
     </Navbar>
   );
 }
