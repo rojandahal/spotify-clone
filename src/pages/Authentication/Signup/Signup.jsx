@@ -3,6 +3,7 @@ import {
   Col,
   Container,
   Form,
+  FormFeedback,
   FormGroup,
   Input,
   Label,
@@ -12,27 +13,75 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./signup.css";
 import { auth } from "../../../Firebase/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
 
 export default function Signup() {
+  var eReg = /\S+@\S+\.\S+/;
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
-  //   const [username, setUsername] = useState("");
-  //   const [gender, setGender] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [username, setUsername] = useState("default username");
+
+  const validatePassword = () => {
+    if (!password) {
+      return false;
+    }
+    return password.length < 8 ? false : true;
+  };
+
+  const validateEmail = () => {
+    return eReg.test(email) ? true : false;
+  };
 
   const formSubmitClickHandler = async (e) => {
     e.preventDefault();
 
+    if (!email && !password && !username) {
+      setEmailError("Please enter a valid email address.");
+      setPasswordError("Please enter a valid password.");
+    }
+    if (!eReg.test(email)) {
+      setEmailError("Please enter a valid email address.");
+    }
+    if (password.length < 8) {
+      setPasswordError("Please enter a valid password.");
+    } else {
+      setEmailError("");
+      setPasswordError("");
+    }
+
     await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         // Signed in
-        console.log(userCredential.user);
+        const user = userCredential.user;
+        // Update the display name
+        await updateProfile(auth.currentUser, {
+          displayName: username,
+        })
+          .then(() => {
+            // Profile updated!
+            // ...
+          })
+          .catch((error) => {
+            // An error occurred
+            // ...
+            console.log(error.message);
+          });
+
+        // Verify that the display name is set
+        console.log("User display name:", user.displayName);
+        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        console.log(errorCode, error.message);
+        if (
+          error.message.split("/")[1].split(")")[0] == "email-already-in-use"
+        ) {
+          setEmailError("Email already in use.");
+        }
       });
   };
 
@@ -85,7 +134,10 @@ export default function Signup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="bg-black text-white"
+                valid={validateEmail(email)}
+                invalid={emailError !== ""}
               />
+              {emailError && <FormFeedback>{emailError}</FormFeedback>}
             </FormGroup>
             {/* Email Ends */}
 
@@ -98,7 +150,10 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="bg-black text-white"
+                valid={validatePassword(password)}
+                invalid={passwordError !== ""}
               />
+              {passwordError && <FormFeedback>{passwordError}</FormFeedback>}
             </FormGroup>
             {/* Password Ends */}
 
@@ -108,6 +163,7 @@ export default function Signup() {
               <Input
                 placeholder="Enter a profile name."
                 type="text"
+                onChange={(e) => setUsername(e.target.value)}
                 className="bg-black text-white"
               />
             </FormGroup>
