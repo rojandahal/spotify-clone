@@ -6,6 +6,7 @@
 .nav-color {
   color: rgb(151, 151, 151);
   text-decoration: none;
+  font-size: 1.2rem;
   justify-content: center;
 }
 

@@ -21,7 +21,7 @@ export default function Root() {
               fontSize: "1.5rem",
             }}
           >
-            <NavItem style={{ marginBottom: "2rem", marginTop: "1.5rem" }}>
+            <NavItem style={{ marginBottom: "1rem", marginTop: "1.5rem" }}>
               <NavbarBrand href="/">
                 <img
                   alt="logo"
