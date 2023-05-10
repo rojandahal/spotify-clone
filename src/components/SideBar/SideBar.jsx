@@ -1,11 +1,10 @@
 import { Outlet, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import Logo from "../assets/spotify.png";
+import Logo from "../../assets/spotify.png";
 import { Nav, NavItem, NavbarBrand } from "reactstrap";
 import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
-import NavBar from "./NavBar";
 
 export default function Root() {
   return (
@@ -14,14 +13,20 @@ export default function Root() {
         <div className="navbar-container">
           <Nav
             vertical
+            className="sticky-top"
             style={{
-              backgroundColor: "black",
               height: "100vh",
               alignItems: "center",
               fontSize: "1.5rem",
             }}
           >
-            <NavItem style={{ marginBottom: "1rem", marginTop: "1.5rem" }}>
+            <NavItem
+              style={{
+                marginBottom: "2rem",
+                marginTop: "1.5rem",
+                fontSize: "2rem",
+              }}
+            >
               <NavbarBrand href="/">
                 <img
                   alt="logo"
@@ -29,24 +34,25 @@ export default function Root() {
                   style={{
                     height: 50,
                     width: 50,
+                    marginInlineEnd: "10px",
                   }}
                 />
                 Spotify
               </NavbarBrand>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink active className="nav-color" to="/">
                 <FaHome style={{ marginInlineEnd: "10px" }} />
                 Home
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink className="nav-color" to="/features">
                 <BsSearch style={{ marginInlineEnd: "10px" }} />
                 Search
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink className="nav-color" to="/library">
                 <BiLibrary style={{ marginInlineEnd: "10px" }} />
                 Library
@@ -57,10 +63,7 @@ export default function Root() {
 
         {/* Here all the components will load where navbar remains fixed */}
         <div className="components">
-          <NavBar />
-          <div className="sub-components">
-            <Outlet />
-          </div>
+          <Outlet />
         </div>
       </div>
     </>
