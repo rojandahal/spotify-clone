@@ -15,13 +15,18 @@ export default function Root() {
             vertical
             className="sticky-top"
             style={{
-              backgroundColor: "black",
               height: "100vh",
               alignItems: "center",
               fontSize: "1.5rem",
             }}
           >
-            <NavItem style={{ marginBottom: "2rem", marginTop: "1.5rem" }}>
+            <NavItem
+              style={{
+                marginBottom: "2rem",
+                marginTop: "1.5rem",
+                fontSize: "2rem",
+              }}
+            >
               <NavbarBrand href="/">
                 <img
                   alt="logo"
@@ -29,24 +34,25 @@ export default function Root() {
                   style={{
                     height: 50,
                     width: 50,
+                    marginInlineEnd: "10px",
                   }}
                 />
                 Spotify
               </NavbarBrand>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink active className="nav-color" to="/">
                 <FaHome style={{ marginInlineEnd: "10px" }} />
                 Home
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink className="nav-color" to="/features">
                 <BsSearch style={{ marginInlineEnd: "10px" }} />
                 Search
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="mb-2">
               <NavLink className="nav-color" to="/library">
                 <BiLibrary style={{ marginInlineEnd: "10px" }} />
                 Library
