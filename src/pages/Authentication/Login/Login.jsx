@@ -11,6 +11,8 @@ import BrandNavBar from "../../../components/SideBar/BrandNavBar";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./login.css";
+import InputField from "../../../components/InputField/InputField";
+import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
 
 export default function Login() {
   return (
@@ -23,48 +25,38 @@ export default function Login() {
         <h1 className="mb-5 mt-5">Login to Spotify</h1>
 
         <Row className="d-flex flex-column align-items-center justify-content-center">
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <FcGoogle className="me-5" />
-              <Label>Continue with Google</Label>
-            </Button>
-          </FormGroup>
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <BsFacebook fill="blue" className="me-5" />
-              <Label>Continue with Facebook</Label>
-            </Button>
-          </FormGroup>
+          <SocialMediaLogin
+            label="Continue with Google"
+            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
+            icon={<FcGoogle className="me-5" />}
+          />
+          <SocialMediaLogin
+            label="Continue with Facebook"
+            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
+            icon={<BsFacebook className="me-5" />}
+          />
         </Row>
 
         <Row className="border-top border-bottom my-5 py-5 w-75">
           <Form>
-            <FormGroup>
-              <Label for="email">Email or Username</Label>
-              <Input
-                id="exampleEmail"
-                name="email"
-                placeholder="Email"
-                type="email"
-                className="bg-dark"
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label for="password">Password</Label>
-              <Input
-                id="examplePassword"
-                name="password"
-                placeholder="Password"
-                type="password"
-                className="bg-dark"
-              />
-            </FormGroup>
+            <InputField
+              forLabel="Email or Username"
+              id="exampleEmail"
+              name="email"
+              placeholder="Email"
+              type="email"
+              className="bg-dark"
+            />
+
+            <InputField
+              forLabel="Password"
+              id="examplePassword"
+              name="password"
+              placeholder="Password"
+              type="password"
+              className="bg-dark"
+            />
+
             <FormGroup switch className="d-flex justify-content-center">
               <Input type="switch" className="" role="switch" />
               <Label>Remember me</Label>
