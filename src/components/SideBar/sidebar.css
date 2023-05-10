@@ -2,12 +2,12 @@
   display: grid;
   font-family: "Roboto";
   grid-template-columns: 250px 1fr;
-  column-gap: 20px;
 }
 
 .nav-color {
   color: rgb(151, 151, 151);
   text-decoration: none;
+  font-size: 1.2rem;
   justify-content: center;
 }
 
@@ -22,4 +22,8 @@
 
 .active {
   color: white;
+}
+
+.sub-components {
+  margin-left: 20px;
 }
