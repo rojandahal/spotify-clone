@@ -27,12 +27,10 @@ export default function Login() {
         <Row className="d-flex flex-column align-items-center justify-content-center">
           <SocialMediaLogin
             label="Continue with Google"
-            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
             icon={<FcGoogle className="me-5" />}
           />
           <SocialMediaLogin
             label="Continue with Facebook"
-            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
             icon={<BsFacebook className="me-5" />}
           />
         </Row>
@@ -45,7 +43,6 @@ export default function Login() {
               name="email"
               placeholder="Email"
               type="email"
-              className="bg-dark"
             />
 
             <InputField
@@ -54,7 +51,6 @@ export default function Login() {
               name="password"
               placeholder="Password"
               type="password"
-              className="bg-dark"
             />
 
             <FormGroup switch className="d-flex justify-content-center">
