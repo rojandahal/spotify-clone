@@ -2,7 +2,7 @@ import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import "./songcard.css";
 import { BsPlayCircleFill } from "react-icons/bs";
 
-function SongCard({ songTitle, description }) {
+function SongCard({ songTitle, description, image }) {
   return (
     <>
       <Card
@@ -13,11 +13,7 @@ function SongCard({ songTitle, description }) {
           backgroundColor: "#272727",
         }}
       >
-        <img
-          className="card-image position-relative"
-          alt="image"
-          src="https://picsum.photos/300/200"
-        />
+        <img className="card-image position-relative" alt="image" src={image} />
         <div className="play-icon position-absolute">
           <BsPlayCircleFill fill="#1ED760" />
         </div>
@@ -25,7 +21,7 @@ function SongCard({ songTitle, description }) {
           <CardTitle className="card-title" tag="h5">
             {songTitle}
           </CardTitle>
-          <CardText className="card-text">{description}</CardText>
+          <CardText className="card-text text-truncate">{description}</CardText>
         </CardBody>
       </Card>
     </>
