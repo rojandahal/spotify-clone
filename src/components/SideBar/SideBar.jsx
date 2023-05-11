@@ -6,6 +6,7 @@ import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import NavBar from "./NavBar";
+import Footer from "../Footer/Footer";
 
 export default function Root() {
   return (
@@ -66,6 +67,7 @@ export default function Root() {
         <div className="components">
           <NavBar />
           <Outlet />
+          <Footer/>
         </div>
       </div>
     </>

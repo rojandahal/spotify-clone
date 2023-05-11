@@ -1,0 +1,17 @@
+.social-media-icon:hover {
+  color: black;
+  background-clip: circle(100% at center);
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.footer-p {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.footer-p:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
