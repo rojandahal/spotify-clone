@@ -3,7 +3,6 @@ import {
   Col,
   Container,
   Form,
-  FormFeedback,
   FormGroup,
   Input,
   Label,
@@ -15,6 +14,8 @@ import "./signup.css";
 import { auth } from "../../../Firebase/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
+import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
+import InputField from "../../../components/InputField/InputField";
 
 export default function Signup() {
   var eReg = /\S+@\S+\.\S+/;
@@ -96,24 +97,16 @@ export default function Signup() {
         </h3>
 
         <Row className="d-flex flex-column align-items-center justify-content-center">
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <FcGoogle className="me-5" />
-              <Label>Signup with Google</Label>
-            </Button>
-          </FormGroup>
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <BsFacebook className="me-5" />
-              <Label>Signup with Facebook</Label>
-            </Button>
-          </FormGroup>
+          <SocialMediaLogin
+            label="Signup with Google"
+            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
+            icon={<FcGoogle className="me-5" />}
+          />
+          <SocialMediaLogin
+            label="Signup with Facebook"
+            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
+            icon={<BsFacebook className="me-5" />}
+          />
         </Row>
 
         <div className="d-flex align-items-center">
@@ -136,37 +129,33 @@ export default function Signup() {
                 className="bg-black text-white"
                 valid={validateEmail(email)}
                 invalid={emailError !== ""}
+                errorMessage={emailError}
               />
-              {emailError && <FormFeedback>{emailError}</FormFeedback>}
             </FormGroup>
             {/* Email Ends */}
 
             {/* Passowrd Starts */}
-            <FormGroup>
-              <Label for="password">Create Password</Label>
-              <Input
-                placeholder="Enter a Password."
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="bg-black text-white"
-                valid={validatePassword(password)}
-                invalid={passwordError !== ""}
-              />
-              {passwordError && <FormFeedback>{passwordError}</FormFeedback>}
-            </FormGroup>
+            <InputField
+              forLabel="Enter a password"
+              placeholder="Enter a Password."
+              handleOnChange={(e) => setPassword(e.target.value)}
+              invalidate={passwordError !== ""}
+              validate={validatePassword(password)}
+              type="password"
+              className="bg-black text-white"
+              errorMessage={passwordError}
+            />
             {/* Password Ends */}
 
             {/* Username Starts */}
-            <FormGroup>
-              <Label for="username">What should we call you?</Label>
-              <Input
-                placeholder="Enter a profile name."
-                type="text"
-                onChange={(e) => setUsername(e.target.value)}
-                className="bg-black text-white"
-              />
-            </FormGroup>
+            <InputField
+              req={true}
+              forLabel="What should we call you?"
+              placeholder="Enter a profile name."
+              handleOnChange={(e) => setUsername(e.target.value)}
+              type="text"
+              className="bg-black text-white"
+            />
             {/* Username Ends */}
 
             {/* Gender Values */}
