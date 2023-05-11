@@ -3,7 +3,6 @@ import {
   Col,
   Container,
   Form,
-  FormFeedback,
   FormGroup,
   Input,
   Label,
@@ -15,6 +14,8 @@ import "./signup.css";
 import { auth } from "../../../Firebase/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
+import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
+import InputField from "../../../components/InputField/InputField";
 import BrandNavBar from "../../../components/SideBar/BrandNavBar";
 
 export default function Signup() {
@@ -34,6 +35,18 @@ export default function Signup() {
 
   const validateEmail = () => {
     return eReg.test(email) ? true : false;
+  };
+
+  const handleUsernameChange = () => {
+    setUsername(username);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   const formSubmitClickHandler = async (e) => {
@@ -99,24 +112,14 @@ export default function Signup() {
         </h3>
 
         <Row className="d-flex flex-column align-items-center justify-content-center">
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <FcGoogle className="me-5" />
-              <Label>Signup with Google</Label>
-            </Button>
-          </FormGroup>
-          <FormGroup>
-            <Button
-              outline
-              className="button-login-social rounded-5 px-5 text-white bg-black w-100"
-            >
-              <BsFacebook className="me-5" />
-              <Label>Signup with Facebook</Label>
-            </Button>
-          </FormGroup>
+          <SocialMediaLogin
+            label="Signup with Google"
+            icon={<FcGoogle className="me-5" />}
+          />
+          <SocialMediaLogin
+            label="Signup with Facebook"
+            icon={<BsFacebook className="me-5" />}
+          />
         </Row>
 
         <div className="d-flex align-items-center">
@@ -129,47 +132,37 @@ export default function Signup() {
         <Row className="my-1 py-5 w-75">
           <Form onSubmit={formSubmitClickHandler}>
             {/* Email Starts */}
-            <FormGroup>
-              <Label for="email">What&apos;s your email address?</Label>
-              <Input
-                placeholder="Enter your Email."
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-black text-white"
-                valid={validateEmail(email)}
-                invalid={emailError !== ""}
-              />
-              {emailError && <FormFeedback>{emailError}</FormFeedback>}
-            </FormGroup>
+            <InputField
+              forLabel="What's your email address?"
+              placeholder="Enter your Email."
+              handleOnChange={handleEmailChange}
+              invalidate={emailError !== ""}
+              validate={validateEmail(email)}
+              type="email"
+              errorMessage={emailError}
+            />
             {/* Email Ends */}
 
             {/* Passowrd Starts */}
-            <FormGroup>
-              <Label for="password">Create Password</Label>
-              <Input
-                placeholder="Enter a Password."
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="bg-black text-white"
-                valid={validatePassword(password)}
-                invalid={passwordError !== ""}
-              />
-              {passwordError && <FormFeedback>{passwordError}</FormFeedback>}
-            </FormGroup>
+            <InputField
+              forLabel="Enter a password"
+              placeholder="Enter a Password."
+              handleOnChange={handlePasswordChange}
+              invalidate={passwordError !== ""}
+              validate={validatePassword(password)}
+              type="password"
+              errorMessage={passwordError}
+            />
             {/* Password Ends */}
 
             {/* Username Starts */}
-            <FormGroup>
-              <Label for="username">What should we call you?</Label>
-              <Input
-                placeholder="Enter a profile name."
-                type="text"
-                onChange={(e) => setUsername(e.target.value)}
-                className="bg-black text-white"
-              />
-            </FormGroup>
+            <InputField
+              req={true}
+              forLabel="What should we call you?"
+              placeholder="Enter a profile name."
+              handleOnChange={handleUsernameChange}
+              type="text"
+            />
             {/* Username Ends */}
 
             {/* Gender Values */}
