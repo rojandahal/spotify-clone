@@ -13,18 +13,31 @@ import { BsFacebook } from "react-icons/bs";
 import "./signup.css";
 import { auth } from "../../../Firebase/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
 import InputField from "../../../components/InputField/InputField";
 import BrandNavBar from "../../../components/SideBar/BrandNavBar";
+import useToken from "../../../hooks/useToken";
+import { useNavigate } from "react-router-dom";
+import { userDetailAtom } from "../../../recoil/atoms/loginAtom";
+import { useSetRecoilState } from "recoil";
 
 export default function Signup() {
+  const navigate = useNavigate();
   var eReg = /\S+@\S+\.\S+/;
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [username, setUsername] = useState("default username");
+  const { token, setToken } = useToken();
+  const setUser = useSetRecoilState(userDetailAtom);
+
+  useEffect(() => {
+    if (!(token === null)) {
+      navigate("/");
+    }
+  });
 
   const validatePassword = () => {
     if (!password) {
@@ -84,8 +97,11 @@ export default function Signup() {
             console.log(error.message);
           });
 
-        // Verify that the display name is set
-        console.log("User display name:", user.displayName);
+        // Verify that the toke is set
+        setToken(user);
+        setUser(user);
+
+        console.log("User display name:", user.accessToken);
         console.log(user);
       })
       .catch((error) => {
