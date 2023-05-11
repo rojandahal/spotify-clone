@@ -4,7 +4,7 @@ import "./navbar.css";
 
 export default function NavBar() {
   return (
-    <Navbar className="d-flex flex-row mb-3" color="dark" dark>
+    <Navbar className="d-flex flex-row mb-3 sticky-top" color="dark" dark>
       <Nav className="me-auto mb-3">
         <NavItem className="me-5 pt-2">
           <AiOutlineLeft className="navigation-arrow" />

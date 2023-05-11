@@ -16,6 +16,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
 import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
 import InputField from "../../../components/InputField/InputField";
+import BrandNavBar from "../../../components/SideBar/BrandNavBar";
 
 export default function Signup() {
   var eReg = /\S+@\S+\.\S+/;
@@ -100,6 +101,8 @@ export default function Signup() {
 
   return (
     <div className="page">
+      <BrandNavBar />
+
       <Container
         className="login-wrapper d-flex flex-column align-items-center justify-content-center w-50 mt-5 rounded-3"
         style={{ backgroundColor: "black" }}

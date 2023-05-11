@@ -1,13 +1,8 @@
-import { FaHome } from "react-icons/fa";
-import { Container, Row } from "reactstrap";
-import SongCard from "../../components/Cards/SongCard";
-import ArtistCard from "../../components/Cards/ArtistCard";
-
+import BrowseSong from "../../components/BrowseSong/BrowseSong";
 function Homepage() {
   return (
     <div>
-      Homepage <FaHome />
-      <Container>
+      {/* <Container>
         <Row xs="auto" md="2">
           {[...Array(10)].map((x, i) => (
             <ArtistCard key={i} />
@@ -17,7 +12,10 @@ function Homepage() {
       <SongCard
         songTitle="Logic Homicide"
         description="Logic, Eminem sang the song"
-      />
+      /> */}
+
+      <BrowseSong category="Popular" />
+      <BrowseSong category="Focus" />
     </div>
   );
 }
