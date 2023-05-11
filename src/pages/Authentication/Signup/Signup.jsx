@@ -30,15 +30,15 @@ export default function Signup() {
     if (!password) {
       return false;
     }
-    return password.length < 8 ? false : true;
+    return password.length < 6 ? false : true;
   };
 
-  const validateEmail = () => {
+  const validateEmail = (email) => {
     return eReg.test(email) ? true : false;
   };
 
-  const handleUsernameChange = () => {
-    setUsername(username);
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
   };
 
   const handleEmailChange = (e) => {
@@ -49,23 +49,12 @@ export default function Signup() {
     setPassword(e.target.value);
   };
 
-  const formSubmitClickHandler = async (e) => {
+  const signupFormSubmitHandler = async (e) => {
     e.preventDefault();
-
-    if (!email && !password && !username) {
-      setEmailError("Please enter a valid email address.");
-      setPasswordError("Please enter a valid password.");
-    }
     if (!eReg.test(email)) {
       setEmailError("Please enter a valid email address.");
+      return;
     }
-    if (password.length < 8) {
-      setPasswordError("Please enter a valid password.");
-    } else {
-      setEmailError("");
-      setPasswordError("");
-    }
-
     await createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         // Signed in
@@ -77,6 +66,7 @@ export default function Signup() {
           .then(() => {
             // Profile updated!
             // ...
+            console.log(auth.currentUser.displayName);
           })
           .catch((error) => {
             // An error occurred
@@ -86,15 +76,18 @@ export default function Signup() {
 
         // Verify that the display name is set
         console.log("User display name:", user.displayName);
-        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode, error.message);
-        if (
-          error.message.split("/")[1].split(")")[0] == "email-already-in-use"
-        ) {
+        console.log(error.message);
+        if (errorCode === "auth/email-already-in-use") {
           setEmailError("Email already in use.");
+        }
+        if (errorCode === "auth/missing-email") {
+          setEmailError("Please enter a valid email address.");
+        }
+        if (errorCode === "auth/weak-password") {
+          setPasswordError("Password should be at least 6 characters.");
         }
       });
   };
@@ -130,7 +123,7 @@ export default function Signup() {
 
         <h3 className="my-2 text-center">Signup with your Email Address</h3>
         <Row className="my-1 py-5 w-75">
-          <Form onSubmit={formSubmitClickHandler}>
+          <Form onSubmit={signupFormSubmitHandler}>
             {/* Email Starts */}
             <InputField
               forLabel="What's your email address?"

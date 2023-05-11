@@ -15,7 +15,6 @@ export default function BrowseSong({ category }) {
       </Row>
 
       <Row
-        noGutters
         className="flex-wnorap"
         style={{
           overflow: "auto",
@@ -27,7 +26,6 @@ export default function BrowseSong({ category }) {
         }}
       >
         {data.items.map((item, index) => {
-          console.log(item.images[1].url);
           return (
             <Col
               key={index}

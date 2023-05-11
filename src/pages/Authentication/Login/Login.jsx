@@ -13,8 +13,88 @@ import { BsFacebook } from "react-icons/bs";
 import "./login.css";
 import InputField from "../../../components/InputField/InputField";
 import SocialMediaLogin from "../../../components/Buttons/SocialMediaLogin";
+import {
+  browserLocalPersistence,
+  setPersistence,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../../Firebase/firebase";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+  var eReg = /\S+@\S+\.\S+/;
+
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const validatePassword = () => {
+    if (!password) {
+      return false;
+    }
+    return password.length < 8 ? false : true;
+  };
+
+  const validateEmail = () => {
+    return eReg.test(email) ? true : false;
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const formSubmitClickHandler = async (e) => {
+    e.preventDefault();
+
+    if (!email && !password) {
+      setEmailError("Please enter a valid email address.");
+      setPasswordError("Please enter a valid password.");
+    }
+    if (!eReg.test(email)) {
+      setEmailError("Please enter a valid email address.");
+    }
+    if (password.length < 8) {
+      setPasswordError("Please enter a valid password.");
+    }
+
+    await signInWithEmailAndPassword(auth, email, password)
+      .then(async (userCredential) => {
+        setEmailError("");
+        setPasswordError("");
+        // Signed in
+        await setPersistence(auth, browserLocalPersistence).then(() => {
+          // Existing and future Auth states are now persisted in the current
+          // session only. Closing the window would clear any existing state even
+          // if a user forgets to sign out.
+          // ...
+          // New sign-in will be persisted with session persistence.
+          return signInWithEmailAndPassword(auth, email, password);
+        });
+        console.log("User display name:", userCredential.user.displayName);
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(error.message);
+        if (errorCode === "auth/wrong-password") {
+          setPasswordError("Wrong Password.");
+        }
+        if (errorCode === "auth/too-many-requests") {
+          setEmailError("Too many requests. Please try again later.");
+        }
+        if (errorCode === "auth/user-not-found") {
+          setEmailError("User not found.");
+        }
+      });
+  };
+
   return (
     <div>
       <BrandNavBar />
@@ -36,21 +116,25 @@ export default function Login() {
         </Row>
 
         <Row className="border-top border-bottom my-5 py-5 w-75">
-          <Form>
+          <Form onSubmit={formSubmitClickHandler}>
             <InputField
               forLabel="Email or Username"
-              id="exampleEmail"
-              name="email"
-              placeholder="Email"
+              placeholder="Enter your Email."
+              handleOnChange={handleEmailChange}
+              invalidate={emailError !== ""}
+              validate={validateEmail(email)}
               type="email"
+              errorMessage={emailError}
             />
 
             <InputField
               forLabel="Password"
-              id="examplePassword"
-              name="password"
-              placeholder="Password"
+              placeholder="Enter you Password."
+              handleOnChange={handlePasswordChange}
+              invalidate={passwordError !== ""}
+              validate={validatePassword(password)}
               type="password"
+              errorMessage={passwordError}
             />
 
             <FormGroup switch className="d-flex justify-content-center">
