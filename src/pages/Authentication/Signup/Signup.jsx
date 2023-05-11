@@ -36,6 +36,18 @@ export default function Signup() {
     return eReg.test(email) ? true : false;
   };
 
+  const handleUsernameChange = () => {
+    setUsername(username);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   const formSubmitClickHandler = async (e) => {
     e.preventDefault();
 
@@ -99,12 +111,10 @@ export default function Signup() {
         <Row className="d-flex flex-column align-items-center justify-content-center">
           <SocialMediaLogin
             label="Signup with Google"
-            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
             icon={<FcGoogle className="me-5" />}
           />
           <SocialMediaLogin
             label="Signup with Facebook"
-            className="button-login-social rounded-5 px-5 text-white bg-black w-100"
             icon={<BsFacebook className="me-5" />}
           />
         </Row>
@@ -119,30 +129,25 @@ export default function Signup() {
         <Row className="my-1 py-5 w-75">
           <Form onSubmit={formSubmitClickHandler}>
             {/* Email Starts */}
-            <FormGroup>
-              <Label for="email">What&apos;s your email address?</Label>
-              <Input
-                placeholder="Enter your Email."
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-black text-white"
-                valid={validateEmail(email)}
-                invalid={emailError !== ""}
-                errorMessage={emailError}
-              />
-            </FormGroup>
+            <InputField
+              forLabel="What's your email address?"
+              placeholder="Enter your Email."
+              handleOnChange={handleEmailChange}
+              invalidate={emailError !== ""}
+              validate={validateEmail(email)}
+              type="email"
+              errorMessage={emailError}
+            />
             {/* Email Ends */}
 
             {/* Passowrd Starts */}
             <InputField
               forLabel="Enter a password"
               placeholder="Enter a Password."
-              handleOnChange={(e) => setPassword(e.target.value)}
+              handleOnChange={handlePasswordChange}
               invalidate={passwordError !== ""}
               validate={validatePassword(password)}
               type="password"
-              className="bg-black text-white"
               errorMessage={passwordError}
             />
             {/* Password Ends */}
@@ -152,9 +157,8 @@ export default function Signup() {
               req={true}
               forLabel="What should we call you?"
               placeholder="Enter a profile name."
-              handleOnChange={(e) => setUsername(e.target.value)}
+              handleOnChange={handleUsernameChange}
               type="text"
-              className="bg-black text-white"
             />
             {/* Username Ends */}
 

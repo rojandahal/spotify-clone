@@ -6,7 +6,6 @@ export default function InputField({
   name,
   placeholder,
   type,
-  className,
   handleOnChange,
   validate,
   invalidate,
@@ -25,7 +24,7 @@ export default function InputField({
         invalid={invalidate}
         placeholder={placeholder}
         type={type}
-        className={className}
+        className="bg-black text-white"
       />
       {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
     </FormGroup>
