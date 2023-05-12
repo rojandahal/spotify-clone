@@ -2,7 +2,7 @@ import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import "./songcard.css";
 import { BsPlayCircleFill } from "react-icons/bs";
 
-function SongCard({ songTitle, description, image }) {
+function SongCard({ song, description, image, clickHandler }) {
   return (
     <>
       <Card
@@ -12,6 +12,7 @@ function SongCard({ songTitle, description, image }) {
           height: "18rem",
           backgroundColor: "#272727",
         }}
+        onClick={clickHandler.bind(this, song)}
       >
         <img className="card-image position-relative" alt="image" src={image} />
         <div className="play-icon position-absolute">
@@ -19,7 +20,7 @@ function SongCard({ songTitle, description, image }) {
         </div>
         <CardBody>
           <CardTitle className="card-title" tag="h5">
-            {songTitle}
+            {song.name}
           </CardTitle>
           <CardText className="card-text text-truncate">{description}</CardText>
         </CardBody>

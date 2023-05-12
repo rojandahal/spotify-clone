@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NavBarRoutes from "./components/SideBar/SideBar";
+import NavBarRoutes from ".";
 import ErrorPage from "./error-page.jsx";
 import Thumbnail from "./components/Cards/SongCard";
 import Homepage from "./pages/HomePage/Homepage";
@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./pages/Authentication/Signup/Signup";
 import Login from "./pages/Authentication/Login/Login";
 import { RecoilRoot } from "recoil";
+import Details from "./pages/Details/Details";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/features",
         element: <Thumbnail />,
+      },
+      {
+        path: "/song/:id",
+        element: <Details />,
       },
     ],
   },

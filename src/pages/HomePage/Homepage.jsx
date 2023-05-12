@@ -1,13 +1,8 @@
-import { useRecoilValue } from "recoil";
-import { auth } from "../../Firebase/firebase";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
-import { userDetailAtom } from "../../recoil/atoms/loginAtom";
 
 function Homepage() {
-  const userDetail = useRecoilValue(userDetailAtom);
-  console.log(userDetail);
   return (
-    <div>
+    <>
       {/* <Container>
         <Row xs="auto" md="2">
           {[...Array(10)].map((x, i) => (
@@ -19,10 +14,10 @@ function Homepage() {
         songTitle="Logic Homicide"
         description="Logic, Eminem sang the song"
       /> */}
-      {console.log(auth.currentUser)}
+      {/* {console.log(auth.currentUser)} */}
       <BrowseSong category="Popular" />
       <BrowseSong category="Focus" />
-    </div>
+    </>
   );
 }
 

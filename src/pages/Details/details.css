@@ -1,0 +1,21 @@
+th,
+td {
+  text-align: left;
+}
+
+.table-row:hover {
+  background-color: rgba(73, 73, 73, 0.848) !important;
+  cursor: pointer;
+}
+
+.table-row:hover .artist-name {
+  text-decoration: underline;
+}
+
+.table-row:hover .table-index {
+  background-image: url("../../assets/play.png");
+  background-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}

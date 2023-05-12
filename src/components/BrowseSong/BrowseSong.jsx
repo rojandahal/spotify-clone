@@ -1,24 +1,46 @@
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, NavbarText, Row } from "reactstrap";
 import SongCard from "../Cards/SongCard";
 import { data } from "../../assets/json/data";
+import { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { songAtom } from "../../recoil/atoms/loginAtom";
+import { useNavigate } from "react-router-dom";
 
 export default function BrowseSong({ category }) {
+  const [wrapState, setWrapState] = useState("flex-nowrap");
+  const setSong = useSetRecoilState(songAtom);
+  const navigate = useNavigate();
+
+  const handleWrapChange = () => {
+    wrapState === "flex-nowrap"
+      ? setWrapState("flex-wrap")
+      : setWrapState("flex-nowrap");
+  };
+
+  const songClickHandler = (songData) => {
+    console.log(songData);
+    let song = { ...songData, category: category };
+    setSong(song);
+    navigate(`/song/${song.id}`);
+  };
+
   return (
-    <Container>
+    <Container fluid>
       <Row className="">
         <Col xs="auto" className=" fs-4">
           {category}
         </Col>
         <Col className="d-flex justify-content-end align-items-center fs-5 text-decoration-underline">
-          See All
+          <NavbarText style={{ cursor: "pointer" }} onClick={handleWrapChange}>
+            See All
+          </NavbarText>
         </Col>
       </Row>
 
       <Row
-        className="flex-wnorap"
+        className={wrapState}
         style={{
           overflow: "auto",
-          flexWrap: "nowrap",
           scrollbarWidth: "none",
           cursor: "grab",
           maxWidth: "100vw",
@@ -37,9 +59,10 @@ export default function BrowseSong({ category }) {
               className=" my-2 d-flex justify-content-center"
             >
               <SongCard
-                songTitle={item.name}
+                song={item}
                 description={item.artists.map((artist) => artist.name)}
                 image={item.images[1].url}
+                clickHandler={songClickHandler}
               />
             </Col>
           );
