@@ -1,3 +1,4 @@
+import { auth } from "../../Firebase/firebase";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
 function Homepage() {
   return (
@@ -13,7 +14,7 @@ function Homepage() {
         songTitle="Logic Homicide"
         description="Logic, Eminem sang the song"
       /> */}
-
+      {console.log(auth.currentUser)}
       <BrowseSong category="Popular" />
       <BrowseSong category="Focus" />
     </div>

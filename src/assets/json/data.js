@@ -580,4 +580,4 @@ export const data = {
   total: 610,
 };
 
-// console.log(albums.items[0].images[0].url);
+// console.log(data);
