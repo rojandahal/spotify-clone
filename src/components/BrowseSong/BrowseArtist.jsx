@@ -20,7 +20,6 @@ export default function BrowseArtist() {
       </Row>
       <Row>
         {shuffledAlbums.map((item, index) => {
-          console.log(item);
           return (
             <Col key={index} className="col-4">
               <ArtistLongCard imageUrl={item.image_url} artist={item.artist} />

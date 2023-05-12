@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
-import { Col, Container, Row, Table } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { dataSelector } from "../../recoil/atoms/dataSelector";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { songAtom } from "../../recoil/atoms/loginAtom";
 import { useEffect } from "react";
 import data from "../../assets/json/data.json";
 import "./details.css";
+import SongsTable from "./SongsTable";
 
 export default function Details() {
   const { id } = useParams();
@@ -45,55 +46,7 @@ export default function Details() {
             </Col>
           </Row>
           <Row className="mt-2">
-            <Table className="text-white table-borderless">
-              <thead className="border-bottom">
-                <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th></th>
-                  <th>Album</th>
-                  <th>Date Added</th>
-                  <th>Duration</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.songs.map((item, index) => {
-                  return (
-                    <tr key={index} className="table-row">
-                      <th
-                        scope="row"
-                        className="table-index d-flex justify-content-center align-items-center"
-                      >
-                        {index + 1}
-                      </th>
-                      <td>
-                        <img
-                          src={item.image_url}
-                          style={{
-                            width: "50px",
-                          }}
-                          alt="album cover"
-                        />
-                      </td>
-                      <td className="artist-name">
-                        {item.name} <br />
-                        <span
-                          style={{
-                            fontFamily: "Montserrat",
-                            fontSize: "0.7rem",
-                          }}
-                        >
-                          {item.artist}
-                        </span>
-                      </td>
-                      <td>{item.album}</td>
-                      <td>{song.release_date}</td>
-                      <td>{item.duration}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </Table>
+            <SongsTable songsData={data} release_date={song.release_date} />
           </Row>
         </Container>
       ) : (

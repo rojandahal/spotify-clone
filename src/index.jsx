@@ -7,6 +7,7 @@ import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import NavBar from "./components/SideBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import PlaySongsBar from "./components/BrowseSong/PlaySongs";
 
 export default function Root() {
   return (
@@ -48,7 +49,7 @@ export default function Root() {
               </NavLink>
             </NavItem>
             <NavItem className="mb-2">
-              <NavLink className="nav-color" to="/features">
+              <NavLink className="nav-color" to="/search">
                 <BsSearch style={{ marginInlineEnd: "10px" }} />
                 Search
               </NavLink>
@@ -68,6 +69,7 @@ export default function Root() {
           <Outlet />
           <Footer />
         </Col>
+        <PlaySongsBar />
       </Row>
     </>
   );

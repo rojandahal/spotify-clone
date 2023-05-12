@@ -1,0 +1,24 @@
+.icon:hover {
+  color: #ffffff;
+}
+.play:hover {
+  transform: scale(1.1);
+}
+.prog {
+  width: 30vw;
+  height: 4px !important;
+}
+.para {
+  font-size: 0.9rem;
+}
+.prog:hover {
+  cursor: pointer !important;
+  background-color: rgb(42, 133, 42) !important;
+}
+.progs {
+  width: 5vw;
+  height: 4px !important;
+}
+.playy {
+  opacity: 0.96;
+}

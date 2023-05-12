@@ -4,6 +4,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  Input,
   Nav,
   NavItem,
   Navbar,
@@ -17,11 +18,12 @@ import profile from "../../assets/profile.png";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { useRecoilValue } from "recoil";
 import { userDetailAtom } from "../../recoil/atoms/loginAtom";
-import { useNavigate } from "react-router";
+import { useMatch, useNavigate } from "react-router";
 
 export default function NavBar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const user = useRecoilValue(userDetailAtom);
+  const match = useMatch("/search/*");
   const navigateTo = useNavigate();
 
   const handleLogout = () => {
@@ -41,6 +43,19 @@ export default function NavBar() {
         <NavItem className="me-5 pt-2">
           <AiOutlineRight className="navigation-arrow" />
         </NavItem>
+        {match ? (
+          <NavItem className="me-5 pt-2">
+            <Input
+              id="exampleSearch"
+              name="search"
+              placeholder="search for songs"
+              type="search"
+              className="rounded-5 bg-dark text-white border-1"
+            />
+          </NavItem>
+        ) : (
+          <></>
+        )}
       </Nav>
       {user ? (
         <>

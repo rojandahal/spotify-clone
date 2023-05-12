@@ -11,3 +11,8 @@ export const songAtom = atom({
   key: "song",
   default: [],
 });
+
+export const playAtom = atom({
+  key: "play",
+  default: null,
+});
