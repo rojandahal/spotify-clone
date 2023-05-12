@@ -1,7 +1,5 @@
 .body-container {
-  display: grid;
   font-family: "Roboto";
-  grid-template-columns: 180px 1fr;
 }
 
 .navbar-container {
@@ -26,10 +24,6 @@
 
 .active {
   color: white;
-}
-
-.sub-components {
-  margin-left: 20px;
 }
 
 @media screen and (max-width: 812px) {

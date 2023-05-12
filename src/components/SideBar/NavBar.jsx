@@ -44,19 +44,6 @@ export default function NavBar() {
       </Nav>
       {user ? (
         <>
-          {/* <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle caret>
-              <img
-                className="rounded-circle"
-                src={profile}
-                style={{ width: "30px" }}
-              ></img>
-            </DropdownToggle>
-            <DropdownMenu >
-              <DropdownItem>Header</DropdownItem>
-              <DropdownItem>Logout</DropdownItem>
-            </DropdownMenu>
-          </Dropdown> */}
           <Button
             className="rounded-5 me-3 bg-white text-black border-0"
             color="secondary"

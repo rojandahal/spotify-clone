@@ -6,3 +6,8 @@ export const userDetailAtom = atom({
     ? JSON.parse(localStorage.getItem("token"))
     : null,
 });
+
+export const songAtom = atom({
+  key: "song",
+  default: [],
+});

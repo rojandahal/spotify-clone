@@ -1,32 +1,31 @@
 import { Outlet, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import Logo from "../../assets/spotify.png";
-import { Nav, NavItem, NavbarBrand } from "reactstrap";
+import Logo from "./assets/spotify.png";
+import { Col, Nav, NavItem, NavbarBrand, Row } from "reactstrap";
 import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
-import NavBar from "./NavBar";
-import Footer from "../Footer/Footer";
+import NavBar from "./components/SideBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 export default function Root() {
   return (
     <>
-      <div className="body-container">
-        <div className="navbar-container">
+      <Row className="body-container m-0">
+        <Col className="navbar-container col-2">
           <Nav
             vertical
-            className="sticky-top"
+            className="sticky-top ms-4 fs-4"
             style={{
               height: "100vh",
-              alignItems: "center",
-              fontSize: "1.5rem",
+              alignItems: "start",
             }}
           >
             <NavItem
               style={{
                 marginBottom: "2rem",
                 marginTop: "1.5rem",
-                fontSize: "2rem",
+                width: "100%",
               }}
             >
               <NavbarBrand href="/">
@@ -34,8 +33,8 @@ export default function Root() {
                   alt="logo"
                   src={Logo}
                   style={{
-                    height: 50,
-                    width: 50,
+                    height: 40,
+                    width: 40,
                     marginInlineEnd: "10px",
                   }}
                 />
@@ -61,15 +60,15 @@ export default function Root() {
               </NavLink>
             </NavItem>
           </Nav>
-        </div>
+        </Col>
 
         {/* Here all the components will load where navbar remains fixed */}
-        <div className="components">
+        <Col className="m-0 p-0 col-10">
           <NavBar />
           <Outlet />
-          <Footer/>
-        </div>
-      </div>
+          <Footer />
+        </Col>
+      </Row>
     </>
   );
 }
