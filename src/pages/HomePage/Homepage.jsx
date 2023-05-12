@@ -1,5 +1,4 @@
 import { useRecoilValue } from "recoil";
-import { auth } from "../../Firebase/firebase";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
 import { userDetailAtom } from "../../recoil/atoms/loginAtom";
 
@@ -19,7 +18,7 @@ function Homepage() {
         songTitle="Logic Homicide"
         description="Logic, Eminem sang the song"
       /> */}
-      {console.log(auth.currentUser)}
+      {/* {console.log(auth.currentUser)} */}
       <BrowseSong category="Popular" />
       <BrowseSong category="Focus" />
     </div>

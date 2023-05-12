@@ -1,580 +1,399 @@
 {
-    "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=5&limit=10&include_groups=single,appears_on&market=ES",
-    "items": [
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/4VMYDCV2IEDYJArk749S6m"
-            },
-            "href": "https://api.spotify.com/v1/artists/4VMYDCV2IEDYJArk749S6m",
-            "id": "4VMYDCV2IEDYJArk749S6m",
-            "name": "Daddy Yankee",
-            "type": "artist",
-            "uri": "spotify:artist:4VMYDCV2IEDYJArk749S6m"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/1GDbiv3spRmZ1XdM1jQbT7"
-            },
-            "href": "https://api.spotify.com/v1/artists/1GDbiv3spRmZ1XdM1jQbT7",
-            "id": "1GDbiv3spRmZ1XdM1jQbT7",
-            "name": "Natti Natasha",
-            "type": "artist",
-            "uri": "spotify:artist:1GDbiv3spRmZ1XdM1jQbT7"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/4K6B1KumSxNR0SfbLk66N9"
-        },
-        "href": "https://api.spotify.com/v1/albums/4K6B1KumSxNR0SfbLk66N9",
-        "id": "4K6B1KumSxNR0SfbLk66N9",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b273ebe5b3413aa954a502770c76",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e02ebe5b3413aa954a502770c76",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d00004851ebe5b3413aa954a502770c76",
-            "width": 64
-          }
-        ],
-        "name": "No Lo Trates",
-        "release_date": "2019-04-26",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:4K6B1KumSxNR0SfbLk66N9"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/5F2Bwl7Is7KVwTbNbMclIS"
-            },
-            "href": "https://api.spotify.com/v1/artists/5F2Bwl7Is7KVwTbNbMclIS",
-            "id": "5F2Bwl7Is7KVwTbNbMclIS",
-            "name": "Papayo",
-            "type": "artist",
-            "uri": "spotify:artist:5F2Bwl7Is7KVwTbNbMclIS"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/1XTGADISSMRf8B4TcVGYUC"
-            },
-            "href": "https://api.spotify.com/v1/artists/1XTGADISSMRf8B4TcVGYUC",
-            "id": "1XTGADISSMRf8B4TcVGYUC",
-            "name": "Ky-Mani Marley",
-            "type": "artist",
-            "uri": "spotify:artist:1XTGADISSMRf8B4TcVGYUC"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/5L7GkSHopAqUeNyyDm3JME"
-        },
-        "href": "https://api.spotify.com/v1/albums/5L7GkSHopAqUeNyyDm3JME",
-        "id": "5L7GkSHopAqUeNyyDm3JME",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b273491317918495d3965330309d",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e02491317918495d3965330309d",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d00004851491317918495d3965330309d",
-            "width": 64
-          }
-        ],
-        "name": "YAYO",
-        "release_date": "2019-04-12",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:5L7GkSHopAqUeNyyDm3JME"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/7DgpPXntG6DkNR4hCi4PjP"
-            },
-            "href": "https://api.spotify.com/v1/artists/7DgpPXntG6DkNR4hCi4PjP",
-            "id": "7DgpPXntG6DkNR4hCi4PjP",
-            "name": "Chesca",
-            "type": "artist",
-            "uri": "spotify:artist:7DgpPXntG6DkNR4hCi4PjP"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/2BlSozZqNW6HVrc6GDOJ99"
-        },
-        "href": "https://api.spotify.com/v1/albums/2BlSozZqNW6HVrc6GDOJ99",
-        "id": "2BlSozZqNW6HVrc6GDOJ99",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b273e3657a2b0b9bb69a56f0e852",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e02e3657a2b0b9bb69a56f0e852",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d00004851e3657a2b0b9bb69a56f0e852",
-            "width": 64
-          }
-        ],
-        "name": "La Reina De Blanco",
-        "release_date": "2019-04-01",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:2BlSozZqNW6HVrc6GDOJ99"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6t1gpxYbY8OlLA7D2RiikQ"
-            },
-            "href": "https://api.spotify.com/v1/artists/6t1gpxYbY8OlLA7D2RiikQ",
-            "id": "6t1gpxYbY8OlLA7D2RiikQ",
-            "name": "Loud Luxury",
-            "type": "artist",
-            "uri": "spotify:artist:6t1gpxYbY8OlLA7D2RiikQ"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/1SupJlEpv7RS2tPNRaHViT"
-            },
-            "href": "https://api.spotify.com/v1/artists/1SupJlEpv7RS2tPNRaHViT",
-            "id": "1SupJlEpv7RS2tPNRaHViT",
-            "name": "Nicky Jam",
-            "type": "artist",
-            "uri": "spotify:artist:1SupJlEpv7RS2tPNRaHViT"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/2R66I0nzp3NnuUlzIGWQ5P"
-        },
-        "href": "https://api.spotify.com/v1/albums/2R66I0nzp3NnuUlzIGWQ5P",
-        "id": "2R66I0nzp3NnuUlzIGWQ5P",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b27350dfd64d272711bf90175a81",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e0250dfd64d272711bf90175a81",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d0000485150dfd64d272711bf90175a81",
-            "width": 64
-          }
-        ],
-        "name": "Body On My",
-        "release_date": "2019-03-29",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:2R66I0nzp3NnuUlzIGWQ5P"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6iSZjc4kOoKZKiBXK5HbwD"
-            },
-            "href": "https://api.spotify.com/v1/artists/6iSZjc4kOoKZKiBXK5HbwD",
-            "id": "6iSZjc4kOoKZKiBXK5HbwD",
-            "name": "El Chombo",
-            "type": "artist",
-            "uri": "spotify:artist:6iSZjc4kOoKZKiBXK5HbwD"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/790FomKkXshlbRYZFtlgla"
-            },
-            "href": "https://api.spotify.com/v1/artists/790FomKkXshlbRYZFtlgla",
-            "id": "790FomKkXshlbRYZFtlgla",
-            "name": "KAROL G",
-            "type": "artist",
-            "uri": "spotify:artist:790FomKkXshlbRYZFtlgla"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/0zikfBnGCRCt6Iq9JurD9K"
-        },
-        "href": "https://api.spotify.com/v1/albums/0zikfBnGCRCt6Iq9JurD9K",
-        "id": "0zikfBnGCRCt6Iq9JurD9K",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/9a541ffa7afc3cf188a64cf0cfd3ddde6fa226a1",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/c7cfe575bba03f4d555ebe1f120de3e938459ad2",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/2bff06c21f8c192582085d724df265b9d7e29109",
-            "width": 64
-          }
-        ],
-        "name": "Dame Tu Cosita (Remixes)",
-        "release_date": "2019-02-22",
-        "release_date_precision": "day",
-        "total_tracks": 3,
-        "type": "album",
-        "uri": "spotify:album:0zikfBnGCRCt6Iq9JurD9K"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/03Q7a7ubckjhqYwLwhAAiF"
-        },
-        "href": "https://api.spotify.com/v1/albums/03Q7a7ubckjhqYwLwhAAiF",
-        "id": "03Q7a7ubckjhqYwLwhAAiF",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b273686c49aaddf0e71f0a253864",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e02686c49aaddf0e71f0a253864",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d00004851686c49aaddf0e71f0a253864",
-            "width": 64
-          }
-        ],
-        "name": "Quiero Saber",
-        "release_date": "2018-10-25",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:03Q7a7ubckjhqYwLwhAAiF"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6iSZjc4kOoKZKiBXK5HbwD"
-            },
-            "href": "https://api.spotify.com/v1/artists/6iSZjc4kOoKZKiBXK5HbwD",
-            "id": "6iSZjc4kOoKZKiBXK5HbwD",
-            "name": "El Chombo",
-            "type": "artist",
-            "uri": "spotify:artist:6iSZjc4kOoKZKiBXK5HbwD"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/790FomKkXshlbRYZFtlgla"
-            },
-            "href": "https://api.spotify.com/v1/artists/790FomKkXshlbRYZFtlgla",
-            "id": "790FomKkXshlbRYZFtlgla",
-            "name": "KAROL G",
-            "type": "artist",
-            "uri": "spotify:artist:790FomKkXshlbRYZFtlgla"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/7dJ4pXK49eLqcSuak45kDH"
-        },
-        "href": "https://api.spotify.com/v1/albums/7dJ4pXK49eLqcSuak45kDH",
-        "id": "7dJ4pXK49eLqcSuak45kDH",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/9eb6c6dc9d4ac31c085949854b93b425458a594d",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/68583a6e3ab3fbfb8a72bf9c7938314e699e6718",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/fe47db6c3a6766d69befed06ebd516729d81807c",
-            "width": 64
-          }
-        ],
-        "name": "Dame Tu Cosita (Radio Version)",
-        "release_date": "2018-08-24",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:7dJ4pXK49eLqcSuak45kDH"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/1ackd5XprZEkH3McKbQD51"
-            },
-            "href": "https://api.spotify.com/v1/artists/1ackd5XprZEkH3McKbQD51",
-            "id": "1ackd5XprZEkH3McKbQD51",
-            "name": "Juan Magán",
-            "type": "artist",
-            "uri": "spotify:artist:1ackd5XprZEkH3McKbQD51"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/1pPmIToKXyGdsCF6LmqLmI"
-            },
-            "href": "https://api.spotify.com/v1/artists/1pPmIToKXyGdsCF6LmqLmI",
-            "id": "1pPmIToKXyGdsCF6LmqLmI",
-            "name": "Rich The Kid",
-            "type": "artist",
-            "uri": "spotify:artist:1pPmIToKXyGdsCF6LmqLmI"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/0pSoTEjs0sMEUoyhUijJtL"
-        },
-        "href": "https://api.spotify.com/v1/albums/0pSoTEjs0sMEUoyhUijJtL",
-        "id": "0pSoTEjs0sMEUoyhUijJtL",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b2731cf74b511bc430657e6f57d4",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e021cf74b511bc430657e6f57d4",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d000048511cf74b511bc430657e6f57d4",
-            "width": 64
-          }
-        ],
-        "name": "Echa Pa Aca",
-        "release_date": "2018-08-03",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:0pSoTEjs0sMEUoyhUijJtL"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/2zriqRg67gFAr1HhhgGjmx"
-        },
-        "href": "https://api.spotify.com/v1/albums/2zriqRg67gFAr1HhhgGjmx",
-        "id": "2zriqRg67gFAr1HhhgGjmx",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b27377a84ec72d4a6bb2a119657c",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e0277a84ec72d4a6bb2a119657c",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d0000485177a84ec72d4a6bb2a119657c",
-            "width": 64
-          }
-        ],
-        "name": "Free Free Free",
-        "release_date": "2018-07-06",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:2zriqRg67gFAr1HhhgGjmx"
-      },
-      {
-        "album_group": "single",
-        "album_type": "single",
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
-            },
-            "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
-            "id": "0TnOYISbd1XYRBk9myaseg",
-            "name": "Pitbull",
-            "type": "artist",
-            "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
-          }
-        ],
-        "external_urls": {
-          "spotify": "https://open.spotify.com/album/5jEhSJbVizVdf6Ypr8cIuV"
-        },
-        "href": "https://api.spotify.com/v1/albums/5jEhSJbVizVdf6Ypr8cIuV",
-        "id": "5jEhSJbVizVdf6Ypr8cIuV",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b2736fa5ec16a4dd4db6280ab0a9",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e026fa5ec16a4dd4db6280ab0a9",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d000048516fa5ec16a4dd4db6280ab0a9",
-            "width": 64
-          }
-        ],
-        "name": "So Sorry",
-        "release_date": "2018-06-29",
-        "release_date_precision": "day",
-        "total_tracks": 1,
-        "type": "album",
-        "uri": "spotify:album:5jEhSJbVizVdf6Ypr8cIuV"
-      }
-    ],
-    "limit": 10,
-    "next": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=15&limit=10&include_groups=single,appears_on&market=ES",
-    "offset": 5,
-    "previous": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=10&include_groups=single,appears_on&market=ES",
-    "total": 610
-  }
+  "songs": [
+    {
+      "id": "1",
+      "name": "drivers license",
+      "artist": "Olivia Rodrigo",
+      "artistId": "1",
+      "album": "SOUR",
+      "albumId": "1",
+      "duration": "4:02",
+      "image_url": "https://picsum.photos/300?random=1",
+      "featuredArtists": []
+    },
+    {
+      "id": "2",
+      "name": "Levitating",
+      "artist": "Dua Lipa",
+      "artistId": "2",
+      "album": "Future Nostalgia",
+      "albumId": "2",
+      "duration": "3:23",
+      "image_url": "https://picsum.photos/300?random=2",
+      "featuredArtists": ["DaBaby"]
+    },
+    {
+      "id": "3",
+      "name": "Leave The Door Open",
+      "artist": "Silk Sonic",
+      "artistId": "3",
+      "album": "An Evening with Silk Sonic",
+      "albumId": "3",
+      "duration": "4:02",
+      "image_url": "https://picsum.photos/300?random=3",
+      "featuredArtists": ["Bruno Mars", "Anderson .Paak"]
+    },
+    {
+      "id": "4",
+      "name": "Heat Waves",
+      "artist": "Glass Animals",
+      "artistId": "4",
+      "album": "Dreamland",
+      "albumId": "4",
+      "duration": "4:09",
+      "image_url": "https://picsum.photos/300?random=4",
+      "featuredArtists": []
+    },
+    {
+      "id": "5",
+      "name": "abcdefu",
+      "artist": "GAYLE",
+      "artistId": "5",
+      "album": "abcdefu",
+      "albumId": "5",
+      "duration": "2:54",
+      "image_url": "https://picsum.photos/300?random=5",
+      "featuredArtists": []
+    },
+    {
+      "id": "6",
+      "name": "Bad Habits",
+      "artist": "Ed Sheeran",
+      "artistId": "6",
+      "album": "=",
+      "albumId": "6",
+      "duration": "3:53",
+      "image_url": "https://picsum.photos/300?random=6",
+      "featuredArtists": []
+    },
+    {
+      "id": "7",
+      "name": "As It Was",
+      "artist": "Harry Styles",
+      "artistId": "7",
+      "album": "Harry's House",
+      "albumId": "7",
+      "duration": "3:45",
+      "image_url": "https://picsum.photos/300?random=7",
+      "featuredArtists": []
+    },
+    {
+      "id": "8",
+      "name": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "artistId": "8",
+      "album": "Montero",
+      "albumId": "8",
+      "duration": "3:05",
+      "image_url": "https://picsum.photos/300?random=8",
+      "featuredArtists": []
+    },
+    {
+      "id": "9",
+      "name": "Good 4 U",
+      "artist": "Olivia Rodrigo",
+      "artistId": "1",
+      "album": "SOUR",
+      "albumId": "1",
+      "duration": "3:13",
+      "image_url": "https://picsum.photos/300?random=9",
+      "featuredArtists": []
+    },
+    {
+      "id": "10",
+      "name": "Enemy",
+      "artist": "Imagine Dragons",
+      "artistId": "12",
+      "album": "Enemy",
+      "albumId": "12",
+      "duration": "3:31",
+      "image_url": "https://picsum.photos/300?random=10",
+      "featuredArtists": ["JID"]
+    },
+    {
+      "id": "11",
+      "name": "Stay",
+      "artist": "The Kid Laroi",
+      "artistId": "13",
+      "album": "Stay",
+      "albumId": "13",
+      "duration": "3:00",
+      "image_url": "https://picsum.photos/300?random=11",
+      "featuredArtists": ["Justin Bieber"]
+    },
+    {
+      "id": "12",
+      "name": "Shivers",
+      "artist": "Ed Sheeran",
+      "artistId": "6",
+      "album": "=",
+      "albumId": "6",
+      "duration": "3:53",
+      "image_url": "https://picsum.photos/300?random=12",
+      "featuredArtists": []
+    },
+    {
+      "id": "13",
+      "name": "About Damn Time",
+      "artist": "Lizzo",
+      "artistId": "9",
+      "album": "Special",
+      "albumId": "9",
+      "duration": "3:23",
+      "image_url": "https://picsum.photos/300?random=13",
+      "featuredArtists": []
+    },
+    {
+      "id": "14",
+      "name": "Big Energy",
+      "artist": "Latto",
+      "artistId": "10",
+      "album": "777",
+      "albumId": "10",
+      "duration": "3:08",
+      "image_url": "https://picsum.photos/300?random=14",
+      "featuredArtists": []
+    },
+    {
+      "id": "15",
+      "name": "First Class",
+      "artist": "Jack Harlow",
+      "artistId": "11",
+      "album": "Come Home the Kids Miss You",
+      "albumId": "11",
+      "duration": "3:04",
+      "image_url": "https://picsum.photos/300?random=15",
+      "featuredArtists": []
+    },
+    {
+      "id": "16",
+      "name": "Heat Waves",
+      "artist": "Glass Animals",
+      "artistId": "4",
+      "album": "Dreamland",
+      "albumId": "4",
+      "duration": "4:09",
+      "image_url": "https://picsum.photos/300?random=86",
+      "featuredArtists": []
+    },
+
+    {
+      "id": "17",
+      "name": "Bad Habits",
+      "artist": "Ed Sheeran",
+      "artistId": "6",
+      "album": "=",
+      "albumId": "6",
+      "duration": "3:53",
+      "image_url": "https://picsum.photos/300?random=87",
+      "featuredArtists": []
+    },
+    {
+      "id": "18",
+      "name": "As It Was",
+      "artist": "Harry Styles",
+      "artistId": "7",
+      "album": "Harry's House",
+      "albumId": "7",
+      "duration": "3:45",
+      "image_url": "https://picsum.photos/300?random=89",
+      "featuredArtists": []
+    }
+  ],
+  "artists": [
+    {
+      "id": "1",
+      "name": "Olivia Rodrigo",
+      "image_url": "https://picsum.photos/300?random=90"
+    },
+    {
+      "id": "2",
+      "name": "Dua Lipa",
+      "image_url": "https://picsum.photos/300?random=91"
+    },
+    {
+      "id": "3",
+      "name": "Silk Sonic",
+      "image_url": "https://picsum.photos/300?random=92"
+    },
+    {
+      "id": "4",
+      "name": "Glass Animals",
+      "image_url": "https://picsum.photos/300?random=93"
+    },
+    {
+      "id": "5",
+      "name": "GAYLE",
+      "image_url": "https://picsum.photos/300?random=94"
+    },
+    {
+      "id": "6",
+      "name": "Ed Sheeran",
+      "image_url": "https://picsum.photos/300?random=95"
+    },
+    {
+      "id": "7",
+      "name": "Harry Styles",
+      "image_url": "https://picsum.photos/300?random=96"
+    },
+    {
+      "id": "8",
+      "name": "Lil Nas X",
+      "image_url": "https://picsum.photos/300?random=97"
+    },
+    {
+      "id": "9",
+      "name": "Lizzo",
+      "image_url": "https://picsum.photos/300?random=96"
+    },
+    {
+      "id": "10",
+      "name": "Latto",
+      "image_url": "https://picsum.photos/300?random=97"
+    },
+    {
+      "id": "11",
+      "name": "Jack Harlow",
+      "image_url": "https://picsum.photos/300?random=98"
+    },
+    {
+      "id": "12",
+      "name": "Imagine Dragons",
+      "image_url": "https://picsum.photos/300?random=99"
+    },
+    {
+      "id": "13",
+      "name": "The Kid Laroi",
+      "image_url": "https://picsum.photos/300?random=100"
+    }
+  ],
+  "albums": [
+    {
+      "id": "1",
+      "name": "SOUR",
+      "artist": "Olivia Rodrigo",
+      "artistId": "1",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02a91c10fe9472d9bd89802e5a",
+      "songs": ["1", "9"]
+    },
+    {
+      "id": "2",
+      "name": "Future Nostalgia",
+      "artist": "Dua Lipa",
+      "artistId": "2",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02bd26ede1ae69327010d49946",
+      "songs": ["2"]
+    },
+    {
+      "id": "3",
+      "name": "An Evening with Silk Sonic",
+      "artist": "Silk Sonic",
+      "artistId": "3",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02fcf75ead8a32ac0020d2ce86",
+      "songs": ["3"]
+    },
+    {
+      "id": "4",
+      "name": "Dreamland",
+      "artist": "Glass Animals",
+      "artistId": "4",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02712701c5e263efc8726b1464",
+      "songs": ["4", "16"]
+    },
+    {
+      "id": "5",
+      "name": "abcdefu",
+      "artist": "GAYLE",
+      "artistId": "5",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e022842f743ebd32235bceb43d3",
+      "songs": ["5"]
+    },
+    {
+      "id": "6",
+      "name": "=",
+      "artist": "Ed Sheeran",
+      "artistId": "6",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02ef24c3fdbf856340d55cfeb2",
+      "songs": ["6", "12", "17"]
+    },
+    {
+      "id": "7",
+      "name": "Harry's House",
+      "artist": "Harry Styles",
+      "artistId": "7",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e022e8ed79e177ff6011076f5f0",
+      "songs": ["7", "18"]
+    },
+    {
+      "id": "8",
+      "name": "Montero",
+      "artist": "Lil Nas X",
+      "artistId": "8",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02be82673b5f79d9658ec0a9fd",
+      "songs": ["8"]
+    },
+    {
+      "id": "9",
+      "name": "Special",
+      "artist": "Lizzo",
+      "artistId": "9",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02fe3b1b9cb7183a94e1aafd43",
+      "songs": ["13"]
+    },
+    {
+      "id": "10",
+      "name": "777",
+      "artist": "Latto",
+      "artistId": "10",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02326f80324c992d1eb403bf1c",
+      "songs": ["14"]
+    },
+    {
+      "id": "11",
+      "name": "Come Home the Kids Miss You",
+      "artist": "Jack Harlow",
+      "artistId": "11",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e028e55edb69ca44a25b52b17bb",
+      "songs": ["15"]
+    },
+    {
+      "id": "12",
+      "name": "Enemy",
+      "artist": "Imagine Dragons",
+      "artistId": "12",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e02aa597e50829169e6994eb403",
+      "songs": ["10"]
+    },
+    {
+      "id": "13",
+      "name": "Stay",
+      "artist": "The Kid Laroi",
+      "artistId": "13",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e0241e31d6ea1d493dd77933ee5",
+      "songs": ["11"]
+    }
+  ],
+  "playlists": [
+    {
+      "id": "1",
+      "name": "Feel Good",
+      "description": "Upbeat songs to boost your mood.",
+      "image_url": "https://i.scdn.co/image/ab67706f00000002fd5512c007a869c4c8a9bca6",
+      "songs": ["1", "2", "3", "5", "6", "9", "4", "10", "18", "15"]
+    },
+    {
+      "id": "2",
+      "name": "Chill",
+      "description": "Relaxing tunes to unwind.",
+      "image_url": "https://i.scdn.co/image/ab67706f00000002bbc45bb3394b18b21265add1",
+      "songs": ["2", "3", "14", "12", "11", "17", "1", "8", "4"]
+    },
+    {
+      "id": "3",
+      "name": "Lofi",
+      "description": "Upbeat songs to boost your study.",
+      "image_url": "https://i.scdn.co/image/ab67616d00001e0227b7fb06450f25598103491d",
+      "songs": ["6", "7", "8", "10", "12", "15", "16", "17", "18"]
+    }
+  ]
+}

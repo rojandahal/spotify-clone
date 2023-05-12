@@ -19,8 +19,11 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../../Firebase/firebase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useToken from "../../../hooks/useToken";
+import { userDetailAtom } from "../../../recoil/atoms/loginAtom";
+import { useSetRecoilState } from "recoil";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -30,6 +33,14 @@ export default function Login() {
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const { token, setToken } = useToken();
+  const setUser = useSetRecoilState(userDetailAtom);
+
+  useEffect(() => {
+    if (!(token === null)) {
+      navigate("/");
+    }
+  });
 
   const validatePassword = () => {
     if (!password) {
@@ -77,6 +88,10 @@ export default function Login() {
           // New sign-in will be persisted with session persistence.
           return signInWithEmailAndPassword(auth, email, password);
         });
+        // Verify that the toke is set
+        setToken(userCredential.user);
+        setUser(userCredential.user);
+
         console.log("User display name:", userCredential.user.displayName);
         navigate("/");
       })
