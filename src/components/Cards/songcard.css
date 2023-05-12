@@ -14,6 +14,13 @@
   box-shadow: "10px 10px 10px #000000" !important;
 }
 
+.card-image-long {
+  margin: 15px 15px 0 15px;
+  height: 5rem;
+  border-radius: 8px;
+  box-shadow: "10px 10px 10px #000000" !important;
+}
+
 .card-title {
   font-family: "Roboto";
 }
@@ -29,6 +36,17 @@
   top: 55%;
   font-size: 2.7rem;
   transition: all 0.1s linear;
+}
+
+.play-icon-long {
+  opacity: 0;
+  padding-top: 10px;
+  font-size: 2.7rem;
+  transition: all 0.1s ease;
+}
+
+.songcard:hover .play-icon-long {
+  opacity: 1;
 }
 
 .songcard:hover .play-icon {
