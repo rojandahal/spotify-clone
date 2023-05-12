@@ -1,6 +1,11 @@
+import { useRecoilValue } from "recoil";
 import { auth } from "../../Firebase/firebase";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
+import { userDetailAtom } from "../../recoil/atoms/loginAtom";
+
 function Homepage() {
+  const userDetail = useRecoilValue(userDetailAtom);
+  console.log(userDetail);
   return (
     <div>
       {/* <Container>
