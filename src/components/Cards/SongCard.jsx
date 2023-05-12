@@ -6,7 +6,7 @@ function SongCard({ song, description, image, clickHandler }) {
   return (
     <>
       <Card
-        className="songcard"
+        className="songcard shadow-sm"
         style={{
           width: "12rem",
           height: "18rem",
@@ -14,7 +14,11 @@ function SongCard({ song, description, image, clickHandler }) {
         }}
         onClick={clickHandler.bind(this, song)}
       >
-        <img className="card-image position-relative" alt="image" src={image} />
+        <img
+          className="card-image position-relative shadow-lg"
+          alt="image"
+          src={image}
+        />
         <div className="play-icon position-absolute">
           <BsPlayCircleFill fill="#1ED760" />
         </div>

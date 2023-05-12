@@ -1,3 +1,4 @@
+import BrowseArtist from "../../components/BrowseSong/BrowseArtist";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
 
 function Homepage() {
@@ -15,6 +16,7 @@ function Homepage() {
         description="Logic, Eminem sang the song"
       /> */}
       {/* {console.log(auth.currentUser)} */}
+      <BrowseArtist />
       <BrowseSong category="Popular" />
       <BrowseSong category="Focus" />
     </>
