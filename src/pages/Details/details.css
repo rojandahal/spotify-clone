@@ -19,3 +19,16 @@ td {
   background-repeat: no-repeat;
   text-indent: -9999px;
 }
+
+.header-background {
+  padding: 20px 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0) 60%,
+    rgba(177, 2, 74, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

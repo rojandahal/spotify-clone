@@ -4,6 +4,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  Input,
   Nav,
   NavItem,
   Navbar,
@@ -15,13 +16,15 @@ import { auth } from "../../Firebase/firebase";
 import { useState } from "react";
 import profile from "../../assets/profile.png";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
-import { useRecoilValue } from "recoil";
-import { userDetailAtom } from "../../recoil/atoms/loginAtom";
-import { useNavigate } from "react-router";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { searchAtom, userDetailAtom } from "../../recoil/atoms/loginAtom";
+import { useMatch, useNavigate } from "react-router";
 
 export default function NavBar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const setSearch = useSetRecoilState(searchAtom);
   const user = useRecoilValue(userDetailAtom);
+  const match = useMatch("/search/*");
   const navigateTo = useNavigate();
 
   const handleLogout = () => {
@@ -30,17 +33,40 @@ export default function NavBar() {
     navigateTo("/login");
   };
 
+  const handleSearch = (e) => {
+    if (e.target.value === "") {
+      setSearch(null);
+    } else {
+      setSearch(true);
+    }
+  };
+
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   return (
-    <Navbar className="d-flex flex-row mb-3 sticky-top" color="dark" dark>
+    <Navbar className="d-flex flex-row sticky-top" color="dark" dark>
       <Nav className="me-auto mb-3">
-        <NavItem className="me-5 pt-2">
-          <AiOutlineLeft className="navigation-arrow" />
-        </NavItem>
-        <NavItem className="me-5 pt-2">
-          <AiOutlineRight className="navigation-arrow" />
-        </NavItem>
+        {match ? (
+          <NavItem className="me-5 pt-2">
+            <Input
+              onChange={handleSearch}
+              id="exampleSearch"
+              name="search"
+              placeholder="search for songs"
+              type="search"
+              className="rounded-5 bg-dark text-white border-1"
+            />
+          </NavItem>
+        ) : (
+          <>
+            <NavItem className="me-5 pt-2">
+              <AiOutlineLeft className="navigation-arrow" />
+            </NavItem>
+            <NavItem className="me-5 pt-2">
+              <AiOutlineRight className="navigation-arrow" />
+            </NavItem>
+          </>
+        )}
       </Nav>
       {user ? (
         <>

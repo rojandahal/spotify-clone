@@ -1,12 +1,11 @@
 import { Col, Container, NavbarText, Row } from "reactstrap";
 import SongCard from "../Cards/SongCard";
-import { data } from "../../assets/json/data";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { songAtom } from "../../recoil/atoms/loginAtom";
 import { useNavigate } from "react-router-dom";
 
-export default function BrowseSong({ category }) {
+export default function BrowseSong({ data, category, searchPage }) {
   const [wrapState, setWrapState] = useState("flex-nowrap");
   const setSong = useSetRecoilState(songAtom);
   const navigate = useNavigate();
@@ -18,27 +17,35 @@ export default function BrowseSong({ category }) {
   };
 
   const songClickHandler = (songData) => {
-    console.log(songData);
-    let song = { ...songData, category: category };
-    setSong(song);
-    navigate(`/song/${song.id}`);
+    if (!searchPage) {
+      let song = { ...songData, category: category };
+      setSong(song);
+      navigate(`/song/${song.id}`);
+    }
   };
 
   return (
     <Container fluid>
-      <Row className="">
+      <Row>
         <Col xs="auto" className=" fs-4">
           {category}
         </Col>
         <Col className="d-flex justify-content-end align-items-center fs-5 text-decoration-underline">
-          <NavbarText style={{ cursor: "pointer" }} onClick={handleWrapChange}>
-            See All
-          </NavbarText>
+          {searchPage ? (
+            <></>
+          ) : (
+            <NavbarText
+              style={{ cursor: "pointer" }}
+              onClick={handleWrapChange}
+            >
+              See All
+            </NavbarText>
+          )}
         </Col>
       </Row>
 
       <Row
-        className={wrapState}
+        className={searchPage ? "wrap" : wrapState}
         style={{
           overflow: "auto",
           scrollbarWidth: "none",
@@ -47,7 +54,7 @@ export default function BrowseSong({ category }) {
           userSelect: "none",
         }}
       >
-        {data.items.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <Col
               key={index}
@@ -60,8 +67,12 @@ export default function BrowseSong({ category }) {
             >
               <SongCard
                 song={item}
-                description={item.artists.map((artist) => artist.name)}
-                image={item.images[1].url}
+                description={
+                  item.artist
+                    ? item.artist
+                    : item.artists.map((artist) => artist.name)
+                }
+                image={item.image_url ? item.image_url : item.images[1].url}
                 clickHandler={songClickHandler}
               />
             </Col>

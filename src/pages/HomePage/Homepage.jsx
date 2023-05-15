@@ -1,6 +1,6 @@
 import BrowseArtist from "../../components/BrowseSong/BrowseArtist";
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
-
+import { data } from "../../assets/json/data";
 function Homepage() {
   return (
     <>
@@ -17,8 +17,8 @@ function Homepage() {
       /> */}
       {/* {console.log(auth.currentUser)} */}
       <BrowseArtist />
-      <BrowseSong category="Popular" />
-      <BrowseSong category="Focus" />
+      <BrowseSong data={data.items} category="Popular" />
+      <BrowseSong data={data.items} category="Focus" />
     </>
   );
 }

@@ -18,7 +18,12 @@ export default function ArtistLongCard({ imageUrl, artist }) {
             src={imageUrl}
           />
         </Col>
-        <Col className="col-7 d-flex align-items-center">{artist}</Col>
+        <Col
+          className="col-6 d-flex align-items-center"
+          style={{ fontFamily: "Roboto" }}
+        >
+          {artist}
+        </Col>
         <Col className="col-2">
           <div className="play-icon-long position-absolute">
             <BsPlayCircleFill fill="#1ED760" />

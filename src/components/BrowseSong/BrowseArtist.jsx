@@ -10,24 +10,32 @@ export default function BrowseArtist() {
   const shuffledAlbums = s.shuffle(data.albums).slice(0, 6);
   return (
     <Container fluid>
-      <Row>
-        <Col className="col-1">
-          <h2 style={{ fontFamily: "Roboto" }}>Hello</h2>
-        </Col>
-        <Col className="col-4 d-flex align-items-center pt-2">
-          <p> {user.displayName}</p>
-        </Col>
-      </Row>
-      <Row>
-        {shuffledAlbums.map((item, index) => {
-          console.log(item);
-          return (
-            <Col key={index} className="col-4">
-              <ArtistLongCard imageUrl={item.image_url} artist={item.artist} />
+      {user === null ? (
+        <></>
+      ) : (
+        <>
+          <Row>
+            <Col className="col-1">
+              <h2 style={{ fontFamily: "Roboto" }}>Hello</h2>
             </Col>
-          );
-        })}
-      </Row>
+            <Col className="col-4 d-flex align-items-center pt-2">
+              <p> {user.displayName}</p>
+            </Col>
+          </Row>
+          <Row>
+            {shuffledAlbums.map((item, index) => {
+              return (
+                <Col key={index} className="col-4">
+                  <ArtistLongCard
+                    imageUrl={item.image_url}
+                    artist={item.artist}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        </>
+      )}
     </Container>
   );
 }

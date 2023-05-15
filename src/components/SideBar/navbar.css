@@ -9,7 +9,6 @@
 .navigation-arrow {
   font-size: 2rem;
   padding: 2px;
-  background-color: black;
   clip-path: circle();
 }
 

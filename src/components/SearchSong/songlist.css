@@ -1,0 +1,21 @@
+.song-artist {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.song-artist:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.songs-name:hover {
+  background-color: rgba(73, 73, 73, 0.848) !important;
+}
+
+.songs-name:hover .song-like-logo {
+  visibility: visible;
+}
+
+.song-like-logo {
+  visibility: hidden;
+}
