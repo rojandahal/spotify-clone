@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { songAtom } from "./loginAtom";
+import { songAtom } from "../atoms/loginAtom";
 import { data } from "../../assets/json/data";
 
 export const dataSelector = selector({

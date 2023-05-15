@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { dataSelector } from "../../recoil/atoms/dataSelector";
+import { dataSelector } from "../../recoil/selectors/dataSelector";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { songAtom } from "../../recoil/atoms/loginAtom";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ export default function Details() {
   return (
     <>
       {song !== null ? (
-        <Container fluid>
+        <Container fluid className="header-background">
           <Row>
             <Col className=" col-3 d-flex justify-content-center">
               <img
@@ -45,7 +45,7 @@ export default function Details() {
               </p>
             </Col>
           </Row>
-          <Row className="mt-2">
+          <Row>
             <SongsTable songsData={data} release_date={song.release_date} />
           </Row>
         </Container>

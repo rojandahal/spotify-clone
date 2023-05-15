@@ -53,3 +53,9 @@
   visibility: visible;
   transform: translateY(-55%);
 }
+
+@media screen and (max-width: 768px) {
+  .play-icon-long {
+    visibility: hidden;
+  }
+}

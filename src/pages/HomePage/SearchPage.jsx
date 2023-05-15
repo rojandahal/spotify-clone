@@ -1,8 +1,20 @@
 import BrowseSong from "../../components/BrowseSong/BrowseSong";
 import data from "../../assets/json/data.json";
+import { useRecoilValue } from "recoil";
+import { searchAtom } from "../../recoil/atoms/loginAtom";
+import SearchHeader from "../../components/SearchSong/SearchHeader";
+import s from "lodash";
+import songData from "../../assets/json/data.json";
 
 export default function SearchPage() {
+  const search = useRecoilValue(searchAtom);
+  const shuffleSongs = s.shuffle(songData.albums).slice(0, 4);
+
+  console.log(search);
   return (
-    <BrowseSong data={data.songs} category={"Browse All"} searchPage={true} />
+    <>
+      {search !== null ? <SearchHeader songData={shuffleSongs} /> : <></>}
+      <BrowseSong data={data.songs} category={"Browse All"} searchPage={true} />
+    </>
   );
 }

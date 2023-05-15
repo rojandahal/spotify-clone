@@ -5,6 +5,8 @@ import { Col, Nav, NavItem, NavbarBrand, Row } from "reactstrap";
 import { FaHome } from "react-icons/fa";
 import { BiLibrary } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
+import { SiAddthis } from "react-icons/si";
+import { FcLike } from "react-icons/fc";
 import NavBar from "./components/SideBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import PlaySongsBar from "./components/BrowseSong/PlaySongs";
@@ -13,7 +15,7 @@ export default function Root() {
   return (
     <>
       <Row className="body-container m-0">
-        <Col className="navbar-container col-2">
+        <Col className="navbar-container col-2 d-flex">
           <Nav
             vertical
             className="sticky-top ms-4 fs-4"
@@ -60,6 +62,36 @@ export default function Root() {
                 Library
               </NavLink>
             </NavItem>
+            <NavItem className="mb-2 mt-3">
+              <NavLink className="nav-color" to="/create-playlist">
+                <SiAddthis style={{ marginInlineEnd: "10px" }} /> Create
+                Playlist
+              </NavLink>
+            </NavItem>
+            <NavItem className="mb-2">
+              <NavLink className="nav-color" to="/liked-songs">
+                <FcLike style={{ marginInlineEnd: "10px" }} /> Liked Songs
+              </NavLink>
+            </NavItem>
+            {/* <NavItem className="d-flex justify-content-end">
+              <Row className="mt-5">
+                <Col className="text-center text-white">
+                  <p className="footer-p">Legal</p>
+                </Col>
+                <Col className="text-center text-white">
+                  <p className="footer-p">Privacy Center</p>
+                </Col>
+                <Col className="text-center text-white">
+                  <p className="footer-p">Privacy Policy</p>
+                </Col>
+                <Col className="text-center text-white">
+                  <p className="footer-p">Cookies</p>
+                </Col>
+                <Col className="text-center text-white">
+                  <p className="footer-p">About Ads</p>
+                </Col>
+              </Row>
+            </NavItem> */}
           </Nav>
         </Col>
 

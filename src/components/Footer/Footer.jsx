@@ -5,7 +5,7 @@ import FooterRows from "./FooterRows";
 
 export default function Footer() {
   return (
-    <Container fluid className="m-0 p-0 bg-dark pt-5 mt-3">
+    <Container fluid className="m-0 p-0 bg-dark pt-5">
       <Row
         className="ms-5 me-2 d-flex justify-content-center"
         xs={1}

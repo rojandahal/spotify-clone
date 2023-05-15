@@ -16,3 +16,8 @@ export const playAtom = atom({
   key: "play",
   default: null,
 });
+
+export const searchAtom = atom({
+  key: "search",
+  default: null,
+});

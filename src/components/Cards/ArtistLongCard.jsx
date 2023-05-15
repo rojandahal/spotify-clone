@@ -19,7 +19,7 @@ export default function ArtistLongCard({ imageUrl, artist }) {
           />
         </Col>
         <Col
-          className="col-7 d-flex align-items-center"
+          className="col-6 d-flex align-items-center"
           style={{ fontFamily: "Roboto" }}
         >
           {artist}

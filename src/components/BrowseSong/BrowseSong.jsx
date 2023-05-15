@@ -10,7 +10,6 @@ export default function BrowseSong({ data, category, searchPage }) {
   const setSong = useSetRecoilState(songAtom);
   const navigate = useNavigate();
 
-  console.log(data);
   const handleWrapChange = () => {
     wrapState === "flex-nowrap"
       ? setWrapState("flex-wrap")
