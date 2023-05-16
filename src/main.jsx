@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -11,6 +10,7 @@ import Login from "./pages/Authentication/Login/Login";
 import { RecoilRoot } from "recoil";
 import Details from "./pages/Details/Details";
 import SearchPage from "./pages/HomePage/SearchPage";
+import LikedSongs from "./pages/LikedSongs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
         path: "/song/:id",
         element: <Details />,
       },
+      {
+        path: "/liked-songs",
+        element: <LikedSongs />,
+      },
     ],
   },
   {
@@ -45,8 +49,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <RecoilRoot>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+    <RouterProvider router={router} />
   </RecoilRoot>
 );

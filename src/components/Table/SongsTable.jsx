@@ -1,16 +1,21 @@
 import { Table } from "reactstrap";
-import s from "lodash";
+import shuffle from "lodash.shuffle";
 import { useSetRecoilState } from "recoil";
 import { playAtom } from "../../recoil/atoms/loginAtom";
+import { AiOutlineHeart } from "react-icons/ai";
 
-export default function SongsTable({ songsData, release_date }) {
-  const data = s.shuffle(songsData.songs);
+export default function SongsTable({
+  songsData,
+  release_date,
+  favoriteHandler,
+  favTable,
+}) {
+  const data = shuffle(songsData);
   const setPlay = useSetRecoilState(playAtom);
-
   const clickHandler = (name, image, artist, duration) => {
-    console.log(name, image, artist, duration);
     setPlay({ name, image, artist, duration });
   };
+
   return (
     <Table className="text-white table-borderless">
       <thead className="border-bottom">
@@ -20,6 +25,7 @@ export default function SongsTable({ songsData, release_date }) {
           <th></th>
           <th>Album</th>
           <th>Date Added</th>
+          <th></th>
           <th>Duration</th>
         </tr>
       </thead>
@@ -27,14 +33,20 @@ export default function SongsTable({ songsData, release_date }) {
         {data.map((item, index) => {
           return (
             <tr
-              onClick={() => {
-                clickHandler(
-                  item.name,
-                  item.image_url,
-                  item.artist,
-                  item.duration
-                );
-              }}
+              onClick={
+                favTable === "true"
+                  ? () => {
+                      favoriteHandler(item);
+                    }
+                  : () => {
+                      clickHandler(
+                        item.name,
+                        item.image_url,
+                        item.artist,
+                        item.duration
+                      );
+                    }
+              }
               key={index}
               className="table-row"
             >
@@ -66,6 +78,12 @@ export default function SongsTable({ songsData, release_date }) {
               </td>
               <td>{item.album}</td>
               <td>{release_date}</td>
+              <td onClick={favoriteHandler.bind(this, item)}>
+                <AiOutlineHeart
+                  className="icon-like"
+                  fill={favTable ? "red" : "white"}
+                />
+              </td>
               <td>{item.duration}</td>
             </tr>
           );

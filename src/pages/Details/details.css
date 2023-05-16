@@ -20,8 +20,16 @@ td {
   text-indent: -9999px;
 }
 
+.icon-like {
+  visibility: hidden;
+}
+
+.table-row:hover .icon-like {
+  visibility: visible;
+}
 .header-background {
-  padding: 20px 20px;
+  padding: 80px 20px;
+  margin-top: -73px;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0) 60%,

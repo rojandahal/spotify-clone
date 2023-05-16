@@ -13,7 +13,7 @@ import {
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "./navbar.css";
 import { auth } from "../../Firebase/firebase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import profile from "../../assets/profile.png";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -25,6 +25,7 @@ export default function NavBar() {
   const setSearch = useSetRecoilState(searchAtom);
   const user = useRecoilValue(userDetailAtom);
   const match = useMatch("/search/*");
+  const [scroll, setScroll] = useState(false);
   const navigateTo = useNavigate();
 
   const handleLogout = () => {
@@ -41,10 +42,30 @@ export default function NavBar() {
     }
   };
 
+  const toggleScroll = () => {
+    if (window.scrollY >= 80) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleScroll);
+    return () => {
+      window.removeEventListener("scroll", toggleScroll);
+    };
+  }, []);
+
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   return (
-    <Navbar className="d-flex flex-row sticky-top" color="dark" dark>
+    <Navbar
+      className={`d-flex flex-row sticky-top ${
+        scroll ? "bg-dark" : "bg-transparent"
+      }`}
+      dark
+    >
       <Nav className="me-auto mb-3">
         {match ? (
           <NavItem className="me-5 pt-2">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { songAtom } from "../../recoil/atoms/loginAtom";
 import { useNavigate } from "react-router-dom";
+import "./browsesong.css";
 
 export default function BrowseSong({ data, category, searchPage }) {
   const [wrapState, setWrapState] = useState("flex-nowrap");
@@ -44,16 +45,7 @@ export default function BrowseSong({ data, category, searchPage }) {
         </Col>
       </Row>
 
-      <Row
-        className={searchPage ? "wrap" : wrapState}
-        style={{
-          overflow: "auto",
-          scrollbarWidth: "none",
-          cursor: "grab",
-          maxWidth: "100vw",
-          userSelect: "none",
-        }}
-      >
+      <Row className={`song-card ${searchPage ? "wrap" : wrapState}`}>
         {data.map((item, index) => {
           return (
             <Col
@@ -61,7 +53,7 @@ export default function BrowseSong({ data, category, searchPage }) {
               xs="10"
               sm="6"
               md="4"
-              lg="3"
+              lg="2"
               xl="2"
               className=" my-2 d-flex justify-content-center"
             >

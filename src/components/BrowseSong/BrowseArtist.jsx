@@ -3,11 +3,11 @@ import { useRecoilValue } from "recoil";
 import { userDetailAtom } from "../../recoil/atoms/loginAtom";
 import ArtistLongCard from "../Cards/ArtistLongCard";
 import data from "../../assets/json/data.json";
-import s from "lodash";
+import shuffle from "lodash.shuffle";
 
 export default function BrowseArtist() {
   const user = useRecoilValue(userDetailAtom);
-  const shuffledAlbums = s.shuffle(data.albums).slice(0, 6);
+  const shuffledAlbums = shuffle(data.albums).slice(0, 6);
   return (
     <Container fluid>
       {user === null ? (
@@ -15,17 +15,15 @@ export default function BrowseArtist() {
       ) : (
         <>
           <Row>
-            <Col className="col-1">
-              <h2 style={{ fontFamily: "Roboto" }}>Hello</h2>
-            </Col>
-            <Col className="col-4 d-flex align-items-center pt-2">
-              <p> {user.displayName}</p>
+            <Col xs={3} lg={1} className="d-flex align-items-center ">
+              <h2 style={{ fontFamily: "Roboto" }}>Hello </h2>
+              <span className="ms-2"> {user.displayName}</span>
             </Col>
           </Row>
           <Row>
             {shuffledAlbums.map((item, index) => {
               return (
-                <Col key={index} className="col-4">
+                <Col key={index} lg={4} sm={12} md={6} xs={12}>
                   <ArtistLongCard
                     imageUrl={item.image_url}
                     artist={item.artist}
