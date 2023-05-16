@@ -26,12 +26,8 @@
   color: white;
 }
 
-@media screen and (max-width: 812px) {
-  .body-container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+@media screen and (max-width: 800px) {
   .navbar-container {
-    display: none;
+    display: none !important;
   }
 }

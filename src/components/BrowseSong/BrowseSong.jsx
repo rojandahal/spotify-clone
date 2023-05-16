@@ -53,7 +53,7 @@ export default function BrowseSong({ data, category, searchPage }) {
               xs="10"
               sm="6"
               md="4"
-              lg="3"
+              lg="2"
               xl="2"
               className=" my-2 d-flex justify-content-center"
             >

@@ -14,8 +14,8 @@ import PlaySongsBar from "./components/BrowseSong/PlaySongs";
 export default function Root() {
   return (
     <>
-      <Row className="body-container m-0">
-        <Col className="navbar-container col-2 d-flex">
+      <Row className="body-container m-0 p-0">
+        <Col className="navbar-container" md={3} lg={2}>
           <Nav
             vertical
             className="sticky-top ms-4 fs-4"
@@ -96,7 +96,7 @@ export default function Root() {
         </Col>
 
         {/* Here all the components will load where navbar remains fixed */}
-        <Col className="m-0 p-0 col-10">
+        <Col className="m-0 p-0" lg={10} xs={12} md={9} sm={12}>
           <NavBar />
           <Outlet />
           <Footer />

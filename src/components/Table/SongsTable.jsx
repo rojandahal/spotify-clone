@@ -1,5 +1,5 @@
 import { Table } from "reactstrap";
-import s from "lodash";
+import shuffle from "lodash.shuffle";
 import { useSetRecoilState } from "recoil";
 import { playAtom } from "../../recoil/atoms/loginAtom";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -10,7 +10,7 @@ export default function SongsTable({
   favoriteHandler,
   favTable,
 }) {
-  const data = s.shuffle(songsData);
+  const data = shuffle(songsData);
   const setPlay = useSetRecoilState(playAtom);
   const clickHandler = (name, image, artist, duration) => {
     setPlay({ name, image, artist, duration });

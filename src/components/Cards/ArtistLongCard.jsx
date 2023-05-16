@@ -11,7 +11,7 @@ export default function ArtistLongCard({ imageUrl, artist }) {
       }}
     >
       <Row>
-        <Col className="col-3">
+        <Col lg={3} sm={3} md={4} xs={4}>
           <img
             className="card-image-long position-relative shadow-lg"
             alt="image"
@@ -19,12 +19,16 @@ export default function ArtistLongCard({ imageUrl, artist }) {
           />
         </Col>
         <Col
-          className="col-6 d-flex align-items-center"
+          className="d-flex align-items-center"
           style={{ fontFamily: "Roboto" }}
+          lg={4}
+          sm={6}
+          md={4}
+          xs={4}
         >
           {artist}
         </Col>
-        <Col className="col-2">
+        <Col lg={2} sm={3} md={3} xs={4}>
           <div className="play-icon-long position-absolute">
             <BsPlayCircleFill fill="#1ED760" />
           </div>
