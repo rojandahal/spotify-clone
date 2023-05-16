@@ -166,6 +166,12 @@ export default function Login() {
             <Label className="forgot-pw-text d-flex justify-content-center">
               Forgot your password?
             </Label>
+
+            <Label className="d-flex justify-content-center my-3 text-center">
+              <a href="/signup" className="text-success ms-2">
+                Signup
+              </a>
+            </Label>
           </Form>
         </Row>
       </Container>

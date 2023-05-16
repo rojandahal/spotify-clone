@@ -16,7 +16,6 @@ import { useRecoilValue } from "recoil";
 import { playAtom } from "../../recoil/atoms/loginAtom";
 function PlaySongsBar() {
   const getPlay = useRecoilValue(playAtom);
-  console.log(getPlay);
 
   return getPlay ? (
     <Navbar
