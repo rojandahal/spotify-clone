@@ -1,0 +1,14 @@
+.song-card {
+  overflow: hidden;
+  scrollbar-width: none;
+  cursor: grab;
+  max-width: 100vw;
+  padding: 0 !important;
+  margin: 0 !important;
+  user-select: none;
+  -ms-overflow-style: none;
+}
+
+.song-card::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,17 @@
+.navlink {
+  text-decoration: none;
+}
+
+.login-button:hover {
+  transform: scale(1.1);
+}
+
+.navigation-arrow {
+  font-size: 2rem;
+  padding: 2px;
+  clip-path: circle();
+}
+
+.navigation-arrow:hover {
+  cursor: pointer;
+}

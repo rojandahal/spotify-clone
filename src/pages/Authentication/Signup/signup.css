@@ -1,0 +1,41 @@
+.page {
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(111, 111, 111, 1) 100%,
+    rgb(160, 160, 160) 0%
+  );
+}
+.button-login-social:hover {
+  border-color: white;
+}
+
+.forgot-pw-text {
+  color: white;
+}
+.login-button-green {
+  background-color: #1ed760;
+}
+
+.login-button-green:hover {
+  background-color: #1ed760;
+  transform: scale(1.1);
+}
+
+.forgot-pw-text:hover {
+  color: #1ed760;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.lines {
+  width: 150px;
+  height: 0;
+  border: 1px white;
+}
+
+@media screen and (max-width: 768px) {
+  .login-wrapper {
+    width: 100% !important;
+  }
+}

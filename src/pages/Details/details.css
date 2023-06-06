@@ -1,0 +1,42 @@
+th,
+td {
+  text-align: left;
+}
+
+.table-row:hover {
+  background-color: rgba(73, 73, 73, 0.848) !important;
+  cursor: pointer;
+}
+
+.table-row:hover .artist-name {
+  text-decoration: underline;
+}
+
+.table-row:hover .table-index {
+  background-image: url("../../assets/play.png");
+  background-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.icon-like {
+  visibility: hidden;
+}
+
+.table-row:hover .icon-like {
+  visibility: visible;
+}
+.header-background {
+  padding: 80px 20px;
+  margin-top: -73px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0) 60%,
+    rgba(177, 2, 74, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
